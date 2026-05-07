@@ -1,0 +1,631 @@
+/* ==========================================================================
+   全站變數與重置 (Variables & Reset)
+   ========================================================================== */
+:root {
+    /* 60-30-10 配色原則 */
+    --clr-bg-primary: #FDFBF7; /* 60% 暖米白 */
+    --clr-bg-secondary: #F4EFE6; /* 淺卡其，用於區塊交替 */
+    --clr-text-main: #2D4263; /* 30% 深邃藍灰 */
+    --clr-text-light: #5B6D85;
+    --clr-accent-red: #C84B31; /* 10% 熱血磚紅 */
+    --clr-accent-yellow: #F6A536; /* 10% 陽光金黃 */
+    --clr-white: #FFFFFF;
+
+    --font-main: 'Noto Sans TC', sans-serif;
+    --transition-speed: 0.3s;
+    --shadow-soft: 0 10px 30px rgba(45, 66, 99, 0.08);
+    --shadow-hover: 0 15px 40px rgba(200, 75, 49, 0.15);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-main);
+    background-color: var(--clr-bg-primary);
+    color: var(--clr-text-main);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: color var(--transition-speed);
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.section-padding {
+    padding: 100px 0;
+}
+
+.bg-light {
+    background-color: var(--clr-bg-secondary);
+}
+
+.text-white { color: var(--clr-white); }
+.text-highlight { color: var(--clr-accent-yellow); }
+.mt-3 { margin-top: 1.5rem; }
+.mt-4 { margin-top: 2rem; }
+.center { text-align: center; }
+
+/* ==========================================================================
+   Typography & Titles
+   ========================================================================== */
+.section-title {
+    font-size: 2.5rem;
+    font-weight: 900;
+    margin-bottom: 0.5rem;
+}
+
+.section-subtitle {
+    font-size: 1.1rem;
+    color: var(--clr-text-light);
+    margin-bottom: 2rem;
+}
+
+.title-line {
+    width: 60px;
+    height: 4px;
+    background-color: var(--clr-accent-red);
+    margin-bottom: 2rem;
+    border-radius: 2px;
+}
+.title-line.line-yellow { background-color: var(--clr-accent-yellow); }
+.section-header.center .title-line { margin: 0 auto 2rem auto; }
+
+/* ==========================================================================
+   Buttons
+   ========================================================================== */
+.btn {
+    display: inline-block;
+    padding: 12px 32px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all var(--transition-speed);
+    text-align: center;
+}
+
+.btn-primary {
+    background-color: var(--clr-accent-red);
+    color: var(--clr-white);
+    box-shadow: 0 4px 15px rgba(200, 75, 49, 0.3);
+}
+
+.btn-primary:hover {
+    background-color: #A63C26;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(200, 75, 49, 0.4);
+}
+
+.btn-yellow {
+    background-color: var(--clr-accent-yellow);
+    color: var(--clr-text-main);
+}
+
+.btn-yellow:hover {
+    background-color: #E0942E;
+    transform: translateY(-3px);
+}
+
+.btn-outline {
+    border: 2px solid var(--clr-accent-red);
+    color: var(--clr-accent-red);
+}
+
+.btn-outline:hover {
+    background-color: var(--clr-accent-red);
+    color: var(--clr-white);
+}
+
+/* ==========================================================================
+    Navbar (包含手機版整合)
+   ========================================================================== */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(253, 251, 247, 0.95);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+    box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+    transition: all var(--transition-speed);
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+}
+
+.logo a {
+    font-size: 1.5rem;
+    font-weight: 900;
+    color: var(--clr-accent-red);
+}
+
+.nav-links {
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-links a {
+    font-weight: 700;
+    font-size: 1rem;
+    position: relative;
+}
+
+.nav-links a:hover, .nav-links a.active {
+    color: var(--clr-accent-red);
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0%;
+    height: 3px;
+    background-color: var(--clr-accent-red);
+    transition: width var(--transition-speed);
+}
+
+.nav-links a:hover::after, .nav-links a.active::after {
+    width: 100%;
+}
+
+/* 漢堡按鈕基礎樣式 (桌機隱藏) */
+.mobile-menu-btn {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    z-index: 1001; /* 確保在選單之上 */
+}
+
+.mobile-menu-btn span {
+    width: 100%;
+    height: 3px;
+    background-color: var(--clr-accent-red);
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+/* --- 手機版 Navbar RWD --- */
+@media (max-width: 768px) {
+    /* 顯示漢堡按鈕 */
+    .mobile-menu-btn {
+        display: flex;
+    }
+
+    /* 手機版滑動選單面板 */
+    .nav-links {
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 70%; /* 選單寬度 */
+        height: 100vh;
+        background-color: #1a2a44; /* 深藍色背景 */
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 25px;
+        box-shadow: -5px 0 15px rgba(0,0,0,0.5);
+
+        /* 預設隱藏在右側 */
+        transform: translateX(100%);
+        transition: transform 0.4s ease-in-out;
+    }
+
+    /* 開啟選單 */
+    .nav-links.active {
+        transform: translateX(0);
+    }
+
+    /* 手機版連結字體樣式 */
+    .nav-links a {
+        color: #ffffff;
+        font-size: 1.3rem;
+        width: 100%;
+        text-align: center;
+        padding: 10px 0;
+        border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+        color: var(--clr-accent-yellow);
+    }
+
+    /* 漢堡按鈕變 X 動畫 */
+    .mobile-menu-btn.active span {
+        background-color: var(--clr-accent-yellow);
+    }
+    .mobile-menu-btn.active span:nth-child(1) {
+        transform: translateY(9px) rotate(45deg);
+    }
+    .mobile-menu-btn.active span:nth-child(2) {
+        opacity: 0;
+    }
+    .mobile-menu-btn.active span:nth-child(3) {
+        transform: translateY(-9px) rotate(-45deg);
+    }
+}
+
+/* ==========================================================================
+   首頁 Hero 主視覺區塊
+   ========================================================================== */
+.hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden;
+    padding-top: 80px;
+}
+
+.hero-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.hero-bg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    animation: heroZoom 20s infinite alternate linear;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(45, 66, 99, 0.85) 0%, rgba(200, 75, 49, 0.5) 100%);
+}
+
+@keyframes heroZoom {
+    0% { transform: scale(1); }
+    100% { transform: scale(1.15); }
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    color: var(--clr-white);
+    max-width: 800px;
+}
+
+.hero-subtitle {
+    display: inline-block;
+    font-size: 1.2rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+    color: var(--clr-accent-yellow);
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 5px 15px;
+    border-radius: 20px;
+    backdrop-filter: blur(5px);
+}
+
+.hero-title {
+    font-size: 4.5rem;
+    font-weight: 900;
+    line-height: 1.2;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.hero-desc {
+    font-size: 1.5rem;
+    font-weight: 400;
+    margin-bottom: 40px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.hero-actions {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+@media (max-width: 768px) {
+    .hero-title { font-size: 3rem; }
+    .hero-desc { font-size: 1.2rem; }
+    .hero-actions { flex-direction: column; padding: 0 20px; }
+}
+
+/* ==========================================================================
+   進階揮棒擊出特效
+   ========================================================================== */
+.strike-container {
+    margin: 20px 0 35px;
+    position: relative;
+    overflow: visible;
+    min-height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.baseball-pitch {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background-color: #fff;
+    border-radius: 50%;
+    background-image:
+        radial-gradient(circle at 15% 50%, transparent 11px, var(--clr-accent-red) 12px, transparent 13px),
+        radial-gradient(circle at 85% 50%, transparent 11px, var(--clr-accent-red) 12px, transparent 13px);
+    box-shadow: inset -2px -2px 6px rgba(0,0,0,0.2), 0 2px 10px rgba(255,255,255,0.8);
+    z-index: 10;
+    opacity: 0;
+    animation: windupSpin 2s linear forwards, pitchThrow 0.1s ease-in 2s forwards;
+}
+
+.batting-strike {
+    font-size: 2.5rem;
+    font-weight: 900;
+    color: var(--clr-white);
+    text-shadow: 3px 3px 0 var(--clr-accent-red), -1px -1px 0 rgba(0,0,0,0.5);
+    display: inline-block;
+    transform: skewX(-12deg);
+    position: relative;
+    letter-spacing: 2px;
+    opacity: 0;
+    z-index: 5;
+    animation: textHit 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) 2.1s forwards;
+}
+
+.batting-strike::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: -15%;
+    width: 0;
+    height: 8px;
+    background-color: var(--clr-accent-yellow);
+    box-shadow: 0 0 15px var(--clr-accent-yellow), 0 0 30px #ffffff;
+    border-radius: 10px;
+    transform: translateY(-50%) rotate(-4deg);
+    z-index: 2;
+    pointer-events: none;
+    animation: swingSlash 0.4s ease-out 2.2s forwards;
+}
+
+.batting-strike::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 40%;
+    width: 10px;
+    height: 10px;
+    background: #fff;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 0 50px 30px rgba(255, 255, 255, 0.9);
+    opacity: 0;
+    z-index: 1;
+    pointer-events: none;
+    animation: boomFlash 0.4s ease-out 2.1s forwards;
+}
+
+@keyframes windupSpin {
+    0% { opacity: 0; transform: rotate(0deg) translateX(50px) rotate(0deg); }
+    10% { opacity: 1; transform: rotate(108deg) translateX(50px) rotate(-108deg); }
+    100% { opacity: 1; transform: rotate(1080deg) translateX(50px) rotate(-1080deg); }
+}
+@keyframes pitchThrow {
+    0% { opacity: 1; transform: rotate(1080deg) translateX(50px) scale(1); }
+    100% { opacity: 0; transform: rotate(1080deg) translateX(0px) scale(0.2); }
+}
+@keyframes textHit {
+    0% { opacity: 0; transform: scale(0.3) skewX(-12deg); }
+    70% { opacity: 1; transform: scale(1.1) skewX(-12deg); }
+    100% { opacity: 1; transform: scale(1) skewX(-12deg); }
+}
+@keyframes swingSlash {
+    0% { width: 0; left: -15%; opacity: 1; }
+    50% { width: 130%; left: -15%; opacity: 1; }
+    100% { width: 0; left: 115%; opacity: 0; }
+}
+@keyframes boomFlash {
+    0% { opacity: 0; transform: translate(-50%, -50%) scale(0); }
+    30% { opacity: 1; transform: translate(-50%, -50%) scale(2.5); }
+    100% { opacity: 0; transform: translate(-50%, -50%) scale(4); }
+}
+
+@media (max-width: 768px) {
+    .batting-strike { font-size: 1.6rem; text-shadow: 2px 2px 0 var(--clr-accent-red); }
+    @keyframes windupSpin {
+        0% { opacity: 0; transform: rotate(0deg) translateX(30px) rotate(0deg); }
+        100% { opacity: 1; transform: rotate(1080deg) translateX(30px) rotate(-1080deg); }
+    }
+}
+
+/* ==========================================================================
+   🏆 首頁冠軍快報橫幅
+   ========================================================================== */
+.champion-banner {
+    background: linear-gradient(135deg, #1a2a44 0%, #0d1b2a 100%);
+    padding: 40px 0;
+    border-top: 4px solid var(--clr-accent-yellow);
+    border-bottom: 4px solid var(--clr-accent-yellow);
+    box-shadow: 0 10px 30px rgba(246, 165, 54, 0.15);
+    position: relative;
+    overflow: hidden;
+}
+.champion-banner::before {
+    content: ''; position: absolute; top: -50%; left: -10%;
+    width: 300px; height: 300px;
+    background: radial-gradient(circle, rgba(246,165,54,0.2) 0%, transparent 70%); z-index: 0;
+}
+.champion-content { display: flex; align-items: center; gap: 30px; position: relative; z-index: 1; }
+.champion-icon { font-size: 5rem; line-height: 1; filter: drop-shadow(0 0 15px rgba(246, 165, 54, 0.6)); animation: floatTrophy 3s ease-in-out infinite; }
+.champion-text { flex: 1; }
+.champion-tag { display: inline-block; background-color: var(--clr-accent-red); color: #fff; padding: 4px 12px; border-radius: 20px; font-size: 0.9rem; font-weight: 700; margin-bottom: 10px; }
+.champion-title { color: #fff; font-size: 1.8rem; margin-bottom: 8px; }
+.highlight-gold { color: var(--clr-accent-yellow); font-size: 2.2rem; font-weight: 900; text-shadow: 0 0 15px rgba(246, 165, 54, 0.5); }
+.champion-text p { color: #cbd5e1; margin: 0; font-size: 1.1rem; }
+.btn-gold { background-color: var(--clr-accent-yellow); color: #0d1b2a; font-weight: 900; box-shadow: 0 4px 15px rgba(246, 165, 54, 0.4); }
+.btn-gold:hover { background-color: #fff; transform: translateY(-3px); }
+@keyframes floatTrophy { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+@media (max-width: 768px) {
+    .champion-content { flex-direction: column; text-align: center; gap: 20px; }
+    .champion-title { font-size: 1.4rem; }
+    .highlight-gold { font-size: 1.8rem; display: block; margin-top: 5px;}
+}
+
+/* ==========================================================================
+   賽事速報區塊
+   ========================================================================== */
+.news-list { max-width: 800px; margin: 0 auto; display: flex; flex-direction: column; gap: 15px; }
+.news-item { display: flex; align-items: center; background-color: var(--clr-white); padding: 20px 25px; border-radius: 10px; text-decoration: none; color: var(--clr-text-main); box-shadow: var(--shadow-soft); transition: all 0.3s ease; border-left: 4px solid transparent; }
+.news-item:hover { transform: translateY(-3px); box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1); border-left-color: var(--clr-primary); }
+.highlight-news { border-left: 4px solid var(--clr-accent-yellow); background: linear-gradient(to right, rgba(246, 165, 54, 0.05), white); }
+.highlight-news:hover { border-left-color: var(--clr-accent-red); }
+.news-date { font-weight: 700; color: var(--clr-text-light); font-size: 1.1rem; min-width: 110px; }
+.news-tag { font-size: 0.85rem; font-weight: 700; padding: 4px 12px; border-radius: 20px; margin-right: 20px; white-space: nowrap; }
+.tag-gold { background-color: var(--clr-accent-yellow); color: #000; }
+.tag-primary { background-color: var(--clr-primary); color: #fff; }
+.news-title { flex: 1; font-size: 1.15rem; font-weight: 700; }
+.text-red { color: var(--clr-accent-red); }
+.news-arrow { color: var(--clr-text-light); font-weight: bold; transition: transform 0.3s ease; }
+.news-item:hover .news-arrow { transform: translateX(5px); color: var(--clr-primary); }
+@media (max-width: 768px) {
+    .news-item { flex-wrap: wrap; padding: 15px; gap: 10px; }
+    .news-date { width: 100%; font-size: 1rem; margin-bottom: 5px; }
+    .news-title { width: 100%; font-size: 1.1rem; margin-top: 5px; }
+    .news-arrow { display: none; }
+}
+
+/* ==========================================================================
+   其他共用區塊 (Team Spirit, Partners, Footer)
+   ========================================================================== */
+.spirit { background-color: var(--clr-text-main); position: relative; z-index: 1; clip-path: polygon(0 5%, 100% 0, 100% 95%, 0 100%); padding: 150px 0; }
+.spirit-container { display: flex; align-items: center; gap: 50px; }
+.spirit-text { flex: 1; }
+.spirit-image { flex: 1; border-radius: 12px; overflow: hidden; box-shadow: 0 20px 50px rgba(0,0,0,0.3); transform: rotate(2deg); }
+.spirit-image img { width: 100%; height: auto; }
+.partners-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 30px; margin-top: 40px; }
+.partner-item { background-color: var(--clr-white); padding: 20px; border-radius: 8px; box-shadow: var(--shadow-soft); width: 200px; display: flex; align-items: center; justify-content: center; transition: transform var(--transition-speed); }
+.partner-item:hover { transform: translateY(-5px); }
+.footer { background-color: var(--clr-text-main); color: var(--clr-white); padding: 60px 0 20px; }
+.footer-container { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 40px; margin-bottom: 40px; }
+.footer-info h3 { font-size: 1.5rem; color: var(--clr-accent-yellow); margin-bottom: 15px; }
+.footer-info p { color: #A0ABC0; margin-bottom: 10px; }
+.footer-links h4 { font-size: 1.2rem; margin-bottom: 15px; }
+.footer-links ul { list-style: none; }
+.footer-links ul li { margin-bottom: 10px; }
+.footer-links ul li a { color: #A0ABC0; }
+.footer-links ul li a:hover { color: var(--clr-accent-yellow); }
+.footer-bottom { text-align: center; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.1); color: #A0ABC0; font-size: 0.9rem; }
+@media (max-width: 992px) {
+    .spirit-container { flex-direction: column; }
+    .spirit { clip-path: polygon(0 3%, 100% 0, 100% 97%, 0 100%); padding: 100px 0; }
+}
+@media (max-width: 768px) {
+    .section-title { font-size: 2rem; }
+}
+
+/* 最新戰報 卡片版 */
+.news-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+}
+
+.news-card {
+    background: var(--clr-white);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: var(--shadow-soft);
+    transition: all 0.3s ease;
+}
+
+.news-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-hover);
+}
+
+/* 圖片 */
+.news-img {
+    position: relative;
+}
+
+.news-img img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+}
+
+/* 左上角標籤 */
+.news-badge {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: var(--clr-accent-red);
+    color: #fff;
+    padding: 5px 12px;
+    font-size: 0.8rem;
+    border-radius: 20px;
+}
+
+/* 文字區 */
+.news-content {
+    padding: 20px;
+}
+
+.news-card-title {
+    font-size: 1.3rem;
+    font-weight: 900;
+    margin: 10px 0;
+}
+
+.news-card-desc {
+    color: var(--clr-text-light);
+    margin-bottom: 15px;
+}
+
+.news-link {
+    color: var(--clr-accent-red);
+    font-weight: 700;
+}
+
+/* RWD */
+@media (max-width: 768px) {
+    .news-grid {
+        grid-template-columns: 1fr;
+    }
+}

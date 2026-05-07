@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>球隊陣容 | 德芙蘭少棒隊</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="inner-page.css">
+    <style>
+        /* =========================================
+           頁面專屬微調樣式 (避免動到全域 style.css)
+           ========================================= */
+        .leadership-section { background-color: var(--clr-white); }
+        .coaches-section { background-color: #f8f9fa; }
+        .players-section { background-color: var(--clr-white); }
+
+        /* 故事區塊左右交錯 (支援大螢幕) */
+        @media (min-width: 768px) {
+            .story-block.reverse { flex-direction: row-reverse; }
+            .story-block.reverse .story-content { padding-right: 0; padding-left: 50px; }
+        }
+
+        /* 標籤設計 */
+        .role-tag {
+            background: var(--clr-accent-red);
+            color: #fff;
+            padding: 6px 14px;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            font-weight: bold;
+            display: inline-block;
+            margin-bottom: 15px;
+            box-shadow: 0 4px 10px rgba(200, 75, 49, 0.3);
+        }
+        .coach-role-tag { background: var(--clr-accent-yellow); color: var(--clr-text-main); box-shadow: 0 4px 10px rgba(246, 165, 54, 0.3); }
+
+        /* 教練與球員網格系統 */
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        /* 專業卡片設計 */
+        .person-card {
+            background: #fff;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.06);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-bottom: 5px solid var(--clr-accent-red);
+            display: flex;
+            flex-direction: column;
+        }
+        .person-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+        }
+        .person-img {
+            width: 100%;
+            height: 350px;
+            object-fit: cover;
+            object-position: top;
+            border-bottom: 3px solid var(--clr-accent-yellow);
+        }
+        .person-info {
+            padding: 30px 25px;
+            flex-grow: 1;
+        }
+        .person-name {
+            font-size: 1.6rem;
+            font-weight: 900;
+            color: var(--clr-text-main);
+            margin-bottom: 5px;
+        }
+        .person-subtitle {
+            font-size: 1.05rem;
+            color: var(--clr-text-light);
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        /* 條列式重點文字 */
+        .desc-list { list-style: none; padding: 0; margin: 0; }
+        .desc-list li {
+            margin-bottom: 15px;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            color: #555;
+            position: relative;
+            padding-left: 20px;
+        }
+        .desc-list li::before {
+            content: "⚾";
+            position: absolute;
+            left: 0;
+            top: 2px;
+            font-size: 0.8rem;
+        }
+        .desc-list li strong {
+            color: var(--clr-accent-red);
+            display: block;
+            margin-bottom: 3px;
+            font-size: 1.05rem;
+        }
+    </style>
+</head>
+<body>
+    <header class="navbar" id="navbar">
+        <div class="container nav-container">
+            <div class="logo"><a href="index.html">⚾ 德芙蘭少棒隊</a></div>
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <span></span><span></span><span></span>
+            </button>
+            <nav class="nav-links" id="navLinks">
+                <a href="index.html">首頁</a>
+                <a href="about.html">關於德芙蘭</a>
+                <a href="team.html" class="active">球隊陣容</a>
+                <a href="model.html">德芙蘭模式</a>
+                <a href="honors.html">榮譽殿堂</a>
+                <a href="support.html">社會支持</a>
+                <a href="contact.html">聯絡我們</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="page-header">
+        <div class="page-header-bg">
+            <img src="https://wkwtb1.github.io/tbulan/images/banner/team-banner.png" alt="全體球員與教練團熱血大合照">
+            <div class="page-header-overlay"></div>
+        </div>
+        <h1 class="page-title gs-reveal">英雄陣容</h1>
+    </section>
+
+    <section class="section-padding leadership-section">
+        <div class="container">
+            <div class="section-header center gs-reveal">
+                <h2 class="section-title">創隊靈魂與行政領導</h2>
+                <div class="title-line line-yellow"></div>
+                <p class="section-subtitle">每一位在場上奔跑的孩子背後，都有默默守護的推手</p>
+            </div>
+
+            <div class="story-block gs-reveal">
+                <div class="story-content">
+                    <span class="role-tag">原鄉教育的領航者</span>
+                    <h2 class="section-title" style="font-size: 2rem;">古金益 校長 <span style="font-size:1.2rem; color:var(--clr-text-light);">(德米．米努)</span></h2>
+                    <p class="mt-3"><strong>背景與使命：</strong><br>古校長來自花蓮縣太魯閣族，深耕教育多年。他認為德芙蘭國小的孩子擁有極佳的體能天賦，因此致力於發揮原鄉特色，訂定「德智體群美」並重的教學目標。</p>
+                    <p class="mt-3"><strong>教育哲學：</strong><br>堅信「對的事情要勇敢去做」。他強調棒球訓練的目的不只是追求冠軍，更是要讓孩子學會自律、尊重與團隊精神，並養成「永不放棄」的生命韌性。</p>
+                    <p class="mt-3"><strong>學業並重：</strong><br>校長非常重視球員的學業，落實「完成作業是基本要求」，確保孩子在發展球技的同時絕不落下成績。</p>
+                </div>
+                <div class="story-image">
+                    <img src="images/team/staff-principal.jpg" alt="古金益校長照片" style="border-radius: 12px; box-shadow: var(--shadow-soft);">
+                </div>
+            </div>
+
+            <div class="story-block reverse gs-reveal" style="margin-top: 60px;">
+                <div class="story-content">
+                    <span class="role-tag" style="background: var(--clr-text-main);">球隊的創辦人與伯樂</span>
+                    <h2 class="section-title" style="font-size: 2rem;">王士銘 主任 <span style="font-size:1.2rem; color:var(--clr-text-light);">(總務主任)</span></h2>
+                    <p class="mt-3"><strong>關鍵貢獻：</strong><br>於民國 111 年 (2022 年) 8 月正式組建少棒隊。在球隊成立之初僅有 12 人時，他不惜經費、挨家挨戶將孩子找回球場，被譽為球隊最重要的伯樂。</p>
+                    <p class="mt-3"><strong>幕後功臣：</strong><br>王主任親力親為，負責尋求社會資源、申請政府補助，並打理球隊日常運作的瑣碎事務，是球隊能在資源匱乏的偏鄉持續運行的最重要支柱。</p>
+                </div>
+                <div class="story-image">
+                    <img src="images/team/staff-director.jpg" alt="王士銘主任照片" style="border-radius: 12px; box-shadow: var(--shadow-soft);">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-padding coaches-section">
+        <div class="container">
+            <div class="section-header center gs-reveal">
+                <h2 class="section-title">專業教練團隊</h2>
+                <div class="title-line"></div>
+            </div>
+
+            <div class="team-grid">
+                <article class="person-card gs-reveal">
+                    <img src="images/team/coach-hsu.png" alt="許晏禎總教練照片" class="person-img">
+                    <div class="person-info">
+                        <span class="role-tag coach-role-tag">總教練</span>
+                        <h3 class="person-name">許晏禎</h3>
+                        <div class="person-subtitle">球員的「守護者」與戰術大腦</div>
+                        <ul class="desc-list">
+                            <li><strong>守護精神</strong>最初僅打算短暫協助，卻被孩子的熱誠感動而選擇留下。身兼教練、司機與保姆，親自接送球員並照顧起居。</li>
+                            <li><strong>執教風格</strong>強調「球員保護」高於戰績。在2025年泰雅運決賽中，為保護受傷主力投手果斷調度，成為基層體育的模範。</li>
+                            <li><strong>榮譽肯定</strong>帶領球隊勇奪 2025 年泰雅運與金門太武盃冠軍，並榮獲 2026 年紅證小巨人盃「最佳教練獎」。</li>
+                        </ul>
+                    </div>
+                </article>
+                <article class="person-card gs-reveal">
+                    <img src="images/team/coach-chen.png" alt="陳少偉教練照片" class="person-img">
+                    <div class="person-info">
+                        <span class="role-tag coach-role-tag">教練</span>
+                        <h3 class="person-name">陳少偉</h3>
+                        <div class="person-subtitle">技術與態度的雕琢者</div>
+                        <ul class="desc-list">
+                            <li><strong>專業指導</strong>負責球員的技術基本功與體能訓練，為小將們打下扎實的棒球基礎。</li>
+                            <li><strong>態度要求</strong>強調孩子們長時間的堅持與努力，在高強度賽事中能獲得最真實的回饋，全國賽的冠軍就是對他們訓練態度最直接的肯定。</li>
+                        </ul>
+                    </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-padding players-section">
+        <div class="container">
+            <div class="section-header center gs-reveal">
+                <h2 class="section-title">核心球員陣容</h2>
+                <div class="title-line line-yellow"></div>
+            </div>
+
+            <div class="team-grid">
+                <article class="person-card gs-reveal" style="border-bottom-color: var(--clr-accent-yellow);">
+                    <img src="https://wkwtb1.github.io/tbulan/images/team/player-1.jpg" alt="張子恩投球姿勢" class="person-img" onerror="this.src='https://via.placeholder.com/400x500/2D4263/FFFFFF?text=Player+01'">
+                    <div class="person-info">
+                        <!-- <span class="role-tag" style="background: #333;">背號 1</span>-->
+                        <h3 class="person-name">張子恩</h3>
+                        <div class="person-subtitle" style="color: var(--clr-accent-red);">王牌投手 / 領袖</div>
+                        <p class="person-desc">球隊的核心靈魂人物。不僅擁有精湛的投球技術，更具備強大的抗壓性。傷勢剛痊癒立即上陣的領袖精神，深深感染著每一位隊友。</p>
+                    </div>
+                </article>
+
+                <article class="person-card gs-reveal" style="border-bottom-color: var(--clr-accent-yellow);">
+                    <img src="https://wkwtb1.github.io/tbulan/images/team/player-24.png" alt="巫克迪專注防守照片" class="person-img" onerror="this.src='https://via.placeholder.com/400x500/2D4263/FFFFFF?text=Player+24'">
+                    <div class="person-info">
+                        <!-- <span class="role-tag" style="background: #333;">背號 24</span>-->
+                        <h3 class="person-name">巫克迪</h3>
+                        <div class="person-subtitle" style="color: var(--clr-accent-red);">重砲手</div>
+                        <p class="person-desc">展現出神速的進步軌跡，屢屢在關鍵時刻擊出猛打賞表現，是對方投手在打線中最不願面對的強打者之一。</p>
+                    </div>
+                </article>
+
+                <article class="person-card gs-reveal" style="border-bottom-color: var(--clr-accent-yellow);">
+                    <img src="https://wkwtb1.github.io/tbulan/images/team/player-10.jpg" alt="涂易恩打擊姿勢照片" class="person-img" onerror="this.src='https://via.placeholder.com/400x500/2D4263/FFFFFF?text=Player+10'">
+                    <div class="person-info">
+                        <!-- <span class="role-tag" style="background: #333;">背號 10</span>-->
+                        <h3 class="person-name">涂易恩</h3>
+                        <div class="person-subtitle" style="color: var(--clr-accent-red);">主力打者</div>
+                        <p class="person-desc">擁有優秀的打擊爆發力與流暢的揮擊姿勢，是球隊在賽場上穩定輸出火力的關鍵人物。</p>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container footer-container">
+            <div class="footer-info">
+                <h3>德芙蘭國小少棒隊</h3>
+                <p>📍 台中市和平區松鶴三巷 10 號</p>
+            </div>
+        </div>
+        <div class="footer-bottom"><p>&copy; 2026 德芙蘭國小少棒隊. All Rights Reserved.</p></div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>

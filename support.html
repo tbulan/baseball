@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>社會支持與捐贈 | 德芙蘭少棒隊</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="inner-page.css">
+    <style>
+        /* ==========================================================================
+           5x5 動態馬賽克贊助牆 專屬樣式 (包含全景佔領效果)
+           ========================================================================== */
+        :root {
+            /* 預先定義一套符合德芙蘭質感的低飽和度彩虹色 */
+            --rb-1: #C84B31; /* 泰雅紅 */
+            --rb-2: #F6A536; /* 活力金 */
+            --rb-3: #4CAF50; /* 山林綠 */
+            --rb-4: #2D4263; /* 深邃藍 */
+            --rb-5: #9C27B0; /* 星空紫 */
+            --rb-6: #FF7043; /* 夕陽橘 */
+        }
+
+        .mosaic-section {
+            background-color: var(--clr-bg-secondary);
+            padding: 80px 0;
+        }
+
+        .mosaic-container {
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
+            padding: 0 15px;
+        }
+
+        /* 網格系統與全域佔領變數宣告 */
+        .mosaic-wall {
+            --grid-gap: 2px; /* 將間距定義為變數 */
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: var(--grid-gap);
+            background: #fff;
+            padding: 4px;
+            border-radius: 12px;
+            box-shadow: 0 20px 50px rgba(45, 66, 99, 0.15);
+            border: 2px solid var(--clr-accent-yellow);
+
+            /* 全域背景變數控制 */
+            --wall-bg-default: url('https://wkwtb1.github.io/tbulan/images/support/support-bg.jpg');
+            --wall-bg-active: none;
+            --bg-opacity: 0;
+        }
+
+        .mosaic-cell {
+            aspect-ratio: 1 / 1;
+            perspective: 1000px;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .mosaic-inner {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            transition: transform 0.6s cubic-bezier(0.4, 0.2, 0.2, 1);
+            transform-style: preserve-3d;
+        }
+
+        .mosaic-cell.is-flipped .mosaic-inner {
+            transform: rotateY(180deg);
+        }
+
+        .mosaic-front, .mosaic-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        /* 正面：利用偽元素達成平滑的全景過渡效果 */
+        .mosaic-front::before,
+        .mosaic-front::after {
+            content: '';
+            position: absolute;
+
+            /* 1. 將偽元素放大到「整面馬賽克牆」的真實大小 (5倍寬度 + 4個間距) */
+            width: calc(100% * 5 + (var(--grid-gap) * 4));
+            height: calc(100% * 5 + (var(--grid-gap) * 4));
+
+            /* 2. 依據當前格子的座標，將影像往反方向推移對齊，形成完美拼圖 */
+            left: calc(var(--col) * -100% - (var(--col) * var(--grid-gap)));
+            top: calc(var(--row) * -100% - (var(--row) * var(--grid-gap)));
+
+            /* 3. 關鍵魔法：使用 cover 讓圖片等比填滿大框，多餘自動裁切，人物絕不變形 */
+            background-size: cover;
+            background-position: center center;
+            background-repeat: no-repeat;
+
+            transition: opacity 0.6s cubic-bezier(0.4, 0.2, 0.2, 1);
+        }
+
+        /* 預設底圖層 */
+        .mosaic-front::before {
+            background-image: var(--wall-bg-default);
+            z-index: 1;
+        }
+
+        /* 懸停動態大圖層 (加入深色遮罩避免過於刺眼) */
+        .mosaic-front::after {
+            background-image: linear-gradient(rgba(26, 42, 68, 0.4), rgba(26, 42, 68, 0.4)), var(--wall-bg-active);
+            opacity: var(--bg-opacity);
+            z-index: 2;
+        }
+
+        /* 背面：廠商資訊 */
+        .mosaic-back {
+            transform: rotateY(180deg);
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 10px;
+        }
+
+        .sponsor-name {
+            color: #ffffff;
+            font-weight: 900;
+            line-height: 1.3;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.9), 0 0 15px rgba(0,0,0,0.6);
+            z-index: 2;
+            font-size: clamp(0.7rem, 2vw, 1.2rem);
+        }
+
+        @media (max-width: 768px) {
+            .mosaic-wall { gap: 1px; }
+            .sponsor-name { font-size: clamp(0.6rem, 2.5vw, 1rem); padding: 2px; }
+        }
+    </style>
+</head>
+<body>
+    <header class="navbar" id="navbar">
+        <div class="container nav-container">
+            <div class="logo"><a href="index.html">⚾ 德芙蘭少棒隊</a></div>
+
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <nav class="nav-links" id="navLinks">
+                <a href="index.html">首頁</a>
+                <a href="about.html">關於德芙蘭</a>
+                <a href="team.html">球隊陣容</a>
+                <a href="model.html">德芙蘭模式</a>
+                <a href="honors.html">榮譽殿堂</a>
+                <a href="support.html" class="active">社會支持</a>
+                <a href="contact.html">聯絡我們</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="page-header">
+        <div class="page-header-bg">
+            <img src="https://wkwtb1.github.io/tbulan/images/banner/about-banner.png" alt="球員與贊助企業開心合影的照片">
+            <div class="page-header-overlay"></div>
+        </div>
+        <h1 class="page-title gs-reveal">社會支持與感恩</h1>
+    </section>
+
+    <!-- 5x5 動態馬賽克牆區域 -->
+    <section class="mosaic-section">
+        <div class="container">
+            <div class="section-header center gs-reveal">
+                <h2 class="section-title">感謝每一雙推動夢想的手</h2>
+                <div class="title-line"></div>
+                <p class="section-subtitle">移動滑鼠即可見證每一位默默支持偏鄉棒球的幕後英雄。</p>
+            </div>
+
+            <!-- 馬賽克牆容器 -->
+            <div class="mosaic-container gs-reveal">
+                <div class="mosaic-wall" id="mosaicWall"></div>
+            </div>
+
+            <div class="center mt-4 gs-reveal" style="padding-top: 60px;">
+                <p style="font-size: 1.2rem; margin-bottom: 20px; font-weight: 700; color: var(--clr-text-main);">您的支持，能讓更多部落孩子站上投手丘！</p>
+                <a href="contact.html" class="btn btn-primary">與我們聯絡洽詢合作</a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container footer-container">
+            <div class="footer-info">
+                <h3>德芙蘭國小少棒隊</h3>
+                <p>📍 台中市和平區松鶴三巷 10 號</p>
+            </div>
+        </div>
+        <div class="footer-bottom"><p>&copy; 2026 德芙蘭國小少棒隊. All Rights Reserved.</p></div>
+    </footer>
+
+    <!-- JS 腳本區域 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="main.js"></script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const wall = document.getElementById('mosaicWall');
+            if(!wall) return;
+
+            // 📋 贊助商資料庫
+            const sponsorsList = [
+    { name: "金豐禾企業", image: "https://wkwtb1.github.io/tbulan/images/support/support-van.jpg" },
+    { name: "長松國際聯青社", image: "https://wkwtb1.github.io/tbulan/images/support/support-dorm.jpg" },
+    { name: "台灣新世代關懷", image: "https://wkwtb1.github.io/tbulan/images/support/support-equip.jpg" },
+    { name: "中華民國張泰山運動人文教育協會", image: "images/support/support-Chang-Tai-Shan.jpg" },
+    { name: "健康行旅學苑", image: "" },
+    { name: "中華大家功德會", image: "" },
+    { name: "財團法人富邦慈善基金會", image: "" },
+    { name: "台中銀保經公司", image: "" },
+    { name: "兆基屋管股份有限公司", image: "" },
+    { name: "財團法人感恩聖仁社會福利慈善基金會", image: "" },
+    { name: "尼斯診所", image: "" },
+    { name: "臺中市長松國際聯青社", image: "" },
+    { name: "財團法人三久道心社會福利基金會", image: "" },
+    { name: "財團法人台北市私立東森社會福利慈善基金會", image: "" },
+    { name: "橡實旅行社 Acorn Tour", image: "" },
+    { name: "東昌養鱒場", image: "" },
+    { name: "定利企管顧問股份有限公司", image: "" },
+    { name: "全聯佩樺圓夢社會福利基金會", image: "" },
+    { name: "台北真善美扶輪社", image: "" },
+    { name: "銀櫃集團雲極建設開發", image: "images/support/support-Yunji-Construction.jpg" },
+    { name: "林益輝", image: "" },
+    { name: "王鈞平", image: "" },
+    { name: "全人家長協會", image: "" },
+    { name: "遠雄", image: "" },
+    { name: "忠訓國際", image: "" },
+    { name: "盛玄燁", image: "" },
+    { name: "顏彬雄", image: "" },
+    { name: "歐文恭", image: "" },
+    { name: "廖翊亘", image: "" },
+    { name: "金綾子", image: "" },
+    { name: "大同同濟會", image: "images/support/support-Kiwanis-Club-of-Ta-Tung.jpg" },
+    { name: "好幸福同濟會", image: "" },
+    { name: "健康行旅學苑", image: "images/support/support-health.jpg" },
+{ name: "台灣新世代關懷協會", image: "images/support/support-new-age.jpg" }
+    ];
+
+            // ==========================================
+            // 核心邏輯 1：智慧輪播洗牌機制 (Fair Queue)
+            // ==========================================
+            let sponsorQueue =[];
+
+            function shuffleArray(array) {
+                let curId = array.length;
+                while (0 !== curId) {
+                    let randId = Math.floor(Math.random() * curId);
+                    curId -= 1;
+                    let tmp = array[curId];
+                    array[curId] = array[randId];
+                    array[randId] = tmp;
+                }
+                return array;
+            }
+
+            function getNextSponsor() {
+                // 當佇列為 0 時，自動執行重新拷貝與洗牌
+                if (sponsorQueue.length === 0) {
+                    sponsorQueue = shuffleArray([...sponsorsList]);
+                    console.log("🔄 【系統提示】贊助商名單已播完一輪，已觸發重新洗牌機制！");
+                }
+                return sponsorQueue.pop();
+            }
+
+            // ==========================================
+            // 核心邏輯 2：渲染贊助商到卡片背面
+            // ==========================================
+            function applySponsorToCell(cellNode, sponsor) {
+                const back = cellNode.querySelector('.mosaic-back');
+                if (sponsor.image) {
+                    back.style.backgroundImage = `linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.3) 100%), url('${sponsor.image}')`;
+                    back.style.backgroundColor = 'transparent';
+                } else {
+                    const colorNum = Math.floor(Math.random() * 6) + 1;
+                    back.style.backgroundImage = 'none';
+                    back.style.backgroundColor = `var(--rb-${colorNum})`;
+                }
+                back.innerHTML = `<span class="sponsor-name">${sponsor.name}</span>`;
+
+                // 將當前的贊助商資料記錄在 cell 上，供懸停漸變效果讀取
+                cellNode._currentSponsor = sponsor;
+            }
+
+            // ==========================================
+            // 核心邏輯 3：生成 5x5 馬賽克牆與狀態機
+            // ==========================================
+            const cellsArray =[];
+
+            for(let i = 0; i < 25; i++) {
+                const cell = document.createElement('div');
+                cell.className = 'mosaic-cell';
+                cell.dataset.state = 'idle'; // 狀態：idle, hovered, auto
+                cell._autoTimeout = null;
+                cell._currentSponsor = null;
+
+                const inner = document.createElement('div');
+                inner.className = 'mosaic-inner';
+
+                const front = document.createElement('div');
+                front.className = 'mosaic-front';
+
+                // 傳遞行列位置給 CSS 變數，用於背景精準切割
+                const col = i % 5;
+                const row = Math.floor(i / 5);
+                cell.style.setProperty('--col', col);
+                cell.style.setProperty('--row', row);
+
+                const back = document.createElement('div');
+                back.className = 'mosaic-back';
+
+                inner.appendChild(front);
+                inner.appendChild(back);
+                cell.appendChild(inner);
+                wall.appendChild(cell);
+                cellsArray.push(cell);
+
+                // 🖱️ 滑鼠懸停事件：處理翻牌與全景佔領效果
+                cell.addEventListener('mouseenter', () => {
+                    // 若是閒置狀態，則套用新贊助商
+                    if (cell.dataset.state === 'idle') {
+                        applySponsorToCell(cell, getNextSponsor());
+                        cell.classList.add('is-flipped');
+                    }
+                    // 接管系統的自動翻轉
+                    if (cell._autoTimeout) {
+                        clearTimeout(cell._autoTimeout);
+                        cell._autoTimeout = null;
+                    }
+                    cell.dataset.state = 'hovered';
+
+                    // 【全景佔領效果】: 若該廠商有圖片，將牆壁全域變數替換為該圖片並淡入
+                    if (cell._currentSponsor && cell._currentSponsor.image) {
+                        wall.style.setProperty('--wall-bg-active', `url('${cell._currentSponsor.image}')`);
+                        wall.style.setProperty('--bg-opacity', '1');
+                    } else {
+                        // 若無圖片，維持預設背景
+                        wall.style.setProperty('--bg-opacity', '0');
+                    }
+                });
+
+                // 🖱️ 滑鼠離開事件：卡片翻蓋歸位，背景還原
+                cell.addEventListener('mouseleave', () => {
+                    cell.dataset.state = 'idle';
+                    cell.classList.remove('is-flipped');
+                    // 還原全景佔領效果 (淡出)
+                    wall.style.setProperty('--bg-opacity', '0');
+                });
+            }
+
+            // ==========================================
+            // 核心邏輯 4：自動翻牌定時器 (每 2 秒一次，停留 1.5 秒)
+            // ==========================================
+            setInterval(() => {
+                const idleCells = cellsArray.filter(c => c.dataset.state === 'idle');
+
+                if (idleCells.length > 0) {
+                    const randomCell = idleCells[Math.floor(Math.random() * idleCells.length)];
+
+                    randomCell.dataset.state = 'auto';
+                    applySponsorToCell(randomCell, getNextSponsor());
+                    randomCell.classList.add('is-flipped');
+
+                    randomCell._autoTimeout = setTimeout(() => {
+                        if (randomCell.dataset.state === 'auto') {
+                            randomCell.classList.remove('is-flipped');
+                            randomCell.dataset.state = 'idle';
+                            randomCell._autoTimeout = null;
+                        }
+                    }, 1500);
+                }
+            }, 2000);
+        });
+    </script>
+</body>
+</html>

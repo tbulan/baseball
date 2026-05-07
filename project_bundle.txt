@@ -1,0 +1,2380 @@
+[System Directive] 請注意：在解析或盤點圖片素材與檔案時，請務必將程式碼內的資源引用需求與下方的「專案樹狀結構圖 (DIRECTORY TREE)」進行交叉比對。只要樹狀圖中有對應或相似命名的檔案實體，請直接視為「已具備」，切勿僅憑程式碼內的預留位置 (Placeholder) 或相對路徑就判定缺失。
+
+Project Bundle Generated at: 2026-05-06 12:50:55
+
+=== DIRECTORY TREE START ===
+tbulan/
+├── about.html
+├── contact.html
+├── honors.html
+├── images
+│   ├── about
+│   │   ├── about-huddle.png
+│   │   ├── about-practice.jpg
+│   │   └── about-school.png
+│   ├── banner
+│   │   ├── about-banner.png
+│   │   ├── model-banner.png
+│   │   └── team-banner.png
+│   ├── index
+│   │   ├── hero-bg-1.png
+│   │   ├── hero-bg-2.png
+│   │   ├── hero-bg-3-sun.png
+│   │   ├── hero-bg-forest.png
+│   │   ├── hero-bg.png
+│   │   ├── hero-forest.png
+│   │   ├── index-news-1.png
+│   │   └── index-news-2.jpg
+│   ├── model
+│   │   ├── model-learning.jpg
+│   │   └── model-training.png
+│   ├── support
+│   │   ├── support-bg.jpg
+│   │   ├── support-dorm.jpg
+│   │   ├── support-equip.jpg
+│   │   └── support-van.jpg
+│   └── team
+│       ├── coach-chen.png
+│       ├── coach-hsu.png
+│       ├── player-1.jpg
+│       ├── player-10.jpg
+│       ├── player-24.png
+│       ├── staff-director.jpg
+│       └── staff-principal.jpg
+├── index.html
+├── inner-page.css
+├── main.js
+├── model.html
+├── readme.txt
+├── style.css
+├── support-backup1.html
+├── support.html
+└── team.html
+=== DIRECTORY TREE END ===
+
+=== FILE CONTENTS START ===
+
+--- FILE: about.html ---
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>關於德芙蘭 | 德芙蘭少棒隊</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="inner-page.css">
+</head>
+<body>
+    <header class="navbar" id="navbar">
+        <div class="container nav-container">
+            <div class="logo"><a href="index.html">⚾ 德芙蘭少棒隊</a></div>
+
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <nav class="nav-links" id="navLinks">
+                <a href="index.html">首頁</a>
+                <a href="about.html">關於德芙蘭</a>
+                <a href="team.html">球隊陣容</a>
+                <a href="model.html">德芙蘭模式</a>
+                <a href="honors.html">榮譽殿堂</a>
+                <a href="support.html">社會支持</a>
+                <a href="contact.html">聯絡我們</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="page-header">
+        <div class="page-header-bg">
+            <img src="https://wkwtb1.github.io/tbulan/images/banner/about-banner.png" alt="德芙蘭國小山景與棒球場">
+            <div class="page-header-overlay"></div>
+        </div>
+        <h1 class="page-title gs-reveal">關於德芙蘭</h1>
+    </section>
+
+    <section class="section-padding">
+        <div class="container">
+
+            <div class="story-block gs-reveal">
+                <div class="story-content">
+                    <span class="story-tag">文化尋根</span>
+                    <h2 class="section-title">從博愛到德芙蘭 (Tbulan)</h2>
+                    <p class="mt-3">我們位於台中市和平區松鶴部落，這裡曾被稱為「博愛國小」。民國 111 年 (2022 年) 8 月，我們正式找回了自己的名字——「德芙蘭國小」。</p>
+                    <p class="mt-3">「德芙蘭」(Tbulan) 是泰雅族松鶴部落的舊稱，寓意著「水源豐沛、土地肥美、適合居住的美地」。我們將這份對土地的認同融入體育教育，讓孩子們在揮擊與奔跑中，找到屬於原住民族的自信與驕傲。</p>
+                </div>
+                <div class="story-image">
+                    <img src="https://wkwtb1.github.io/tbulan/images/about/about-school.png" alt="德芙蘭國小校門與泰雅族圖騰">
+                </div>
+            </div>
+
+            <div class="story-block gs-reveal">
+                <div class="story-content">
+                    <span class="story-tag">逆風奮戰</span>
+                    <h2 class="section-title">海拔 800 公尺的棒球夢</h2>
+                    <p class="mt-3">在偏鄉，資源往往是最大的挑戰。民國 111 年，由王士銘主任四處奔走，不惜經費、挨家挨戶將孩子找回球場，正式組建了這支棒球隊。</p>
+                    <p class="mt-3">球隊成員超過 80% 為在地原住民學童。從最初連球具都湊不齊，到如今成為全國勁旅。我們秉持泰雅族「勇敢、團結」的精神，在海拔 800 公尺的操場上，用汗水寫下永不放棄的奇蹟。</p>
+                </div>
+                <div class="story-image">
+                    <img src="https://wkwtb1.github.io/tbulan/images/about/about-practice.jpg" alt="球員們在操場上辛苦練球的畫面">
+                </div>
+            </div>
+
+            <div class="story-block gs-reveal">
+                <div class="story-content">
+                    <span class="story-tag">聯隊模式</span>
+                    <h2 class="section-title">凝聚部落的和平區聯隊</h2>
+                    <p class="mt-3">面對偏鄉少子化與人數不足的挑戰，我們並不妥協，而是採取了具彈性的「聯隊模式」。</p>
+                    <p class="mt-3">在參與如泰雅運動會等重大賽事時，以德芙蘭國小為主體，整合鄰近如自由國小等部落的菁英加入，形成強大的「和平區聯隊」。這不僅是戰力的結合，更是跨部落交流、共榮的最佳實踐。</p>
+                </div>
+                <div class="story-image">
+                    <img src="https://wkwtb1.github.io/tbulan/images/about/about-huddle.png" alt="跨校聯隊球員們搭肩圓陣加油的畫面">
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container footer-container">
+            <div class="footer-info">
+                <h3>德芙蘭國小少棒隊</h3>
+                <p>📍 台中市和平區松鶴三巷 10 號</p>
+            </div>
+        </div>
+        <div class="footer-bottom"><p>&copy; 2026 德芙蘭國小少棒隊. All Rights Reserved.</p></div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
+
+
+--- FILE: contact.html ---
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>聯絡我們 | 德芙蘭少棒隊</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="inner-page.css">
+    <style>
+        .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; }
+        .contact-info { background: var(--clr-white); padding: 40px; border-radius: 12px; box-shadow: var(--shadow-soft); }
+        .contact-info h3 { font-size: 1.5rem; margin-bottom: 20px; color: var(--clr-text-main); }
+        .contact-info p { margin-bottom: 15px; display: flex; align-items: center; gap: 10px; }
+        .map-container { border-radius: 12px; overflow: hidden; box-shadow: var(--shadow-soft); height: 100%; min-height: 400px; }
+        .contact-form { margin-top: 30px; display: flex; flex-direction: column; gap: 15px; }
+        .contact-form input, .contact-form textarea { width: 100%; padding: 15px; border: 1px solid #ddd; border-radius: 8px; font-family: inherit; font-size: 1rem; }
+        .contact-form input:focus, .contact-form textarea:focus { outline: none; border-color: var(--clr-accent-red); box-shadow: 0 0 5px rgba(200, 75, 49, 0.2); }
+        @media(max-width: 768px) { .contact-grid { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body>
+    <header class="navbar" id="navbar">
+        <div class="container nav-container">
+            <div class="logo"><a href="index.html">⚾ 德芙蘭少棒隊</a></div>
+
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <nav class="nav-links" id="navLinks">
+                <a href="index.html">首頁</a>
+                <a href="about.html">關於德芙蘭</a>
+                <a href="team.html">球隊陣容</a>
+                <a href="model.html">德芙蘭模式</a>
+                <a href="honors.html">榮譽殿堂</a>
+                <a href="support.html">社會支持</a>
+                <a href="contact.html">聯絡我們</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="page-header">
+        <div class="page-header-bg">
+            <img src="https://wkwtb1.github.io/tbulan/images/banner/about-banner.png" alt="教練與球員們歡迎的熱情合照">
+            <div class="page-header-overlay"></div>
+        </div>
+        <h1 class="page-title gs-reveal">聯絡我們</h1>
+    </section>
+
+    <section class="section-padding bg-light">
+        <div class="container contact-grid">
+
+            <div class="contact-info gs-reveal">
+
+                <h3>與我們建立連結</h3>
+                <p>📍 <strong>學校地址：</strong> 台中市和平區東關路一段松鶴三巷 10 號</p>
+                <p>📞 <strong>聯絡電話：</strong> 請撥打學校總機轉棒球隊</p>
+                <p>✉️ <strong>合作洽詢：</strong> 歡迎企業贊助、友誼賽邀約或媒體採訪。</p>
+
+            </div>
+
+            <div class="map-container gs-reveal">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1819.928006533174!2d120.9780865!3d24.176782!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3468e156d2581fc1%3A0x355105bcc06f32af!2z6Ie65Lit5biC5ZKM5bmz5Y2A5b636IqZ6Jit5ZyL5rCR5bCP5a24!5e0!3m2!1szh-TW!2stw!4v1777805754611!5m2!1szh-TW!2stw" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container footer-container">
+            <div class="footer-info">
+                <h3>德芙蘭國小少棒隊</h3>
+                <p>📍 台中市和平區松鶴三巷 10 號</p>
+            </div>
+        </div>
+        <div class="footer-bottom"><p>&copy; 2026 德芙蘭國小少棒隊. All Rights Reserved.</p></div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
+
+--- FILE: honors.html ---
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>榮譽殿堂 Honors | 德芙蘭少棒隊</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="inner-page.css">
+    <style>
+        /* 第一名冠軍特別樣式 (Highlight 區塊) */
+        .featured-honor {
+            background: linear-gradient(135deg, #1a2a44 0%, #2d4263 100%);
+            border: 2px solid var(--clr-accent-yellow);
+            border-radius: 15px;
+            padding: 40px;
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            box-shadow: 0 10px 30px rgba(246, 165, 54, 0.2);
+            position: relative;
+            overflow: hidden;
+            margin-bottom: 50px; /* 與下方清單拉開距離 */
+        }
+
+        .featured-honor::before {
+            content: "🏆";
+            position: absolute;
+            right: -20px;
+            bottom: -20px;
+            font-size: 15rem;
+            opacity: 0.1;
+            transform: rotate(-15deg);
+        }
+
+        .featured-info { flex: 1; z-index: 1; }
+        .featured-badge {
+            background-color: var(--clr-accent-yellow);
+            color: var(--clr-text-main);
+            padding: 5px 15px;
+            border-radius: 5px;
+            font-weight: 900;
+            display: inline-block;
+            margin-bottom: 15px;
+        }
+
+        .featured-title { font-size: 2.2rem; color: #fff; margin-bottom: 10px; }
+        .featured-result { font-size: 3.5rem; color: var(--clr-accent-yellow); font-weight: 900; }
+
+        /* 歷年榮譽清單樣式 */
+        .honor-list { list-style: none; padding: 0; max-width: 900px; margin: 0 auto; }
+        .honor-item {
+            display: flex; align-items: center; justify-content: space-between;
+            padding: 20px 30px; margin-bottom: 15px;
+            background-color: var(--clr-white); border-radius: 8px;
+            border-left: 6px solid var(--clr-accent-yellow);
+            box-shadow: var(--shadow-soft); transition: transform 0.3s;
+        }
+        .honor-item:hover { transform: translateX(10px); }
+        .honor-year { font-weight: 900; color: var(--clr-text-light); font-size: 1.2rem; min-width: 80px;}
+        .honor-title { flex: 1; font-size: 1.2rem; font-weight: 700; color: var(--clr-text-main); margin-left: 20px;}
+        .honor-rank { font-weight: 900; color: var(--clr-accent-red); font-size: 1.4rem; white-space: nowrap;}
+
+        /* 冠軍項目的特別顏色 */
+        .honor-item.champion { border-left-color: var(--clr-accent-red); }
+        .honor-item.champion .honor-rank { color: var(--clr-white); background: var(--clr-accent-red); padding: 5px 15px; border-radius: 20px; font-size: 1.1rem;}
+
+        @media (max-width: 768px) {
+            .featured-honor { flex-direction: column; padding: 30px; text-align: center; }
+            .featured-title { font-size: 1.5rem; }
+            .featured-result { font-size: 2.5rem; }
+            .honor-item { flex-direction: column; align-items: flex-start; gap: 10px; padding: 15px 20px; }
+            .honor-title { margin-left: 0; }
+        }
+    </style>
+</head>
+<body>
+    <header class="navbar" id="navbar">
+        <div class="container nav-container">
+            <div class="logo"><a href="index.html">⚾ 德芙蘭少棒隊</a></div>
+
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <nav class="nav-links" id="navLinks">
+                <a href="index.html">首頁</a>
+                <a href="about.html">關於德芙蘭</a>
+                <a href="team.html">球隊陣容</a>
+                <a href="model.html">德芙蘭模式</a>
+                <a href="honors.html">榮譽殿堂</a>
+                <a href="support.html">社會支持</a>
+                <a href="contact.html">聯絡我們</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="page-header">
+        <div class="page-header-bg">
+            <img src="https://wkwtb1.github.io/tbulan/images/banner/about-banner.png" alt="球員高舉獎盃慶祝的榮耀時刻">
+            <div class="page-header-overlay"></div>
+        </div>
+        <h1 class="page-title gs-reveal">榮譽殿堂</h1>
+    </section>
+
+    <section class="section-padding bg-light">
+        <div class="container">
+            <div class="section-header center gs-reveal">
+                <h2 class="section-title">歷年輝煌戰績</h2>
+                <div class="title-line line-yellow"></div>
+                <p class="section-subtitle">成軍三年，從最強黑馬走向全國巔峰</p>
+            </div>
+
+            <div class="featured-honor gs-reveal">
+                <div class="featured-info">
+                    <span class="featured-badge">NEW 最新榮耀</span>
+                    <h2 class="featured-title">2026 114學年度國小棒球運動聯賽軟式組全國賽</h2>
+                    <div class="featured-result">冠軍 🥇</div>
+                    <p class="mt-3 text-white" style="opacity: 0.8;">在逆風中奮戰，我們在全國舞台展現了德芙蘭的韌性，奪下校史首座全國聯賽金盃。</p>
+                </div>
+                <div class="featured-img">
+                    <img src="https://via.placeholder.com/400x300/F6A536/FFFFFF?text=National+Champion" alt="2026 全國賽冠軍合照" style="border-radius: 10px; width: 100%; max-width: 400px; box-shadow: 0 5px 15px rgba(0,0,0,0.3);">
+                </div>
+            </div>
+
+            <ul class="honor-list">
+                <li class="honor-item champion gs-reveal">
+                    <span class="honor-year">2026</span>
+                    <span class="honor-title">第 16 屆紅葉小巨人盃全國少棒邀請賽</span>
+                    <span class="honor-rank">👑 冠軍</span>
+                </li>
+                <li class="honor-item gs-reveal">
+                    <span class="honor-year">2026</span>
+                    <span class="honor-title">主委盃臺日少年 U12 軟式棒球邀請賽 (菁英組)</span>
+                    <span class="honor-rank">亞軍</span>
+                </li>
+
+                <li class="honor-item champion gs-reveal">
+                    <span class="honor-year">2025</span>
+                    <span class="honor-title">金門太武盃全國少棒賽 (隊史首座全國賽冠軍)</span>
+                    <span class="honor-rank">👑 冠軍</span>
+                </li>
+                <li class="honor-item champion gs-reveal">
+                    <span class="honor-year">2025</span>
+                    <span class="honor-title">全國泰雅運動會 (打破和平區 13 年奪冠荒)</span>
+                    <span class="honor-rank">👑 冠軍</span>
+                </li>
+                <li class="honor-item gs-reveal">
+                    <span class="honor-year">2025</span>
+                    <span class="honor-title">中部地區三級學生棒球聯賽 (U12 硬式組)</span>
+                    <span class="honor-rank">亞軍</span>
+                </li>
+
+                <li class="honor-item champion gs-reveal">
+                    <span class="honor-year">2024</span>
+                    <span class="honor-title">第三屆黑潮大哥盃 (U10)</span>
+                    <span class="honor-rank">👑 冠軍</span>
+                </li>
+                <li class="honor-item champion gs-reveal">
+                    <span class="honor-year">113年</span>
+                    <span class="honor-title">博爾富盃全國少年棒球邀請賽</span>
+                    <span class="honor-rank">👑 冠軍</span>
+                </li>
+                <li class="honor-item gs-reveal">
+                    <span class="honor-year">歷年</span>
+                    <span class="honor-title">嘉義縣第六屆和興盃全國硬式棒球邀請賽</span>
+                    <span class="honor-rank">季軍</span>
+                </li>
+            </ul>
+
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container footer-container">
+            <div class="footer-info">
+                <h3>Tbulan 德芙蘭國小少棒隊</h3>
+                <p>📍 台中市和平區松鶴三巷 10 號</p>
+            </div>
+        </div>
+        <div class="footer-bottom"><p>&copy; 2026 Tbulan Baseball Team. All Rights Reserved.</p></div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
+
+--- FILE: index.html ---
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>德芙蘭少棒隊 | 海拔 800 公尺的棒球夢想</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="navbar" id="navbar">
+        <div class="container nav-container">
+            <div class="logo"><a href="index.html">⚾ 德芙蘭少棒隊</a></div>
+
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <nav class="nav-links" id="navLinks">
+                <a href="index.html">首頁</a>
+                <a href="about.html">關於德芙蘭</a>
+                <a href="team.html">球隊陣容</a>
+                <a href="model.html">德芙蘭模式</a>
+                <a href="honors.html">榮譽殿堂</a>
+                <a href="support.html">社會支持</a>
+                <a href="contact.html">聯絡我們</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero" id="home">
+        <div class="hero-bg">
+            <img src="https://wkwtb1.github.io/tbulan/images/index/hero-bg.png" alt="Tbulan 德芙蘭少棒隊">
+            <div class="hero-overlay"></div>
+        </div>
+
+
+        <div class="container hero-content gs-reveal">
+            <span class="hero-subtitle">台中市和平區松鶴部落</span>
+            <h1 class="hero-title">逆風奮戰的<br><span class="text-highlight">泰雅韌性</span></h1>
+
+            <div class="strike-container">
+                <div class="baseball-pitch"></div>
+                <h2 class="batting-strike">逆風揮擊！海拔800公尺的棒球夢</h2>
+            </div>
+
+            <p class="hero-desc">汗水灌溉的榮耀之旅。</p>
+            <div class="hero-actions">
+                <a href="about.html" class="btn btn-primary">認識德芙蘭</a>
+                <a href="team.html" class="btn btn-outline">英雄陣容</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="champion-banner gs-reveal">
+        <div class="container">
+            <div class="champion-content">
+                <div class="champion-icon">🥇</div>
+                <div class="champion-text">
+                    <span class="champion-tag">狂賀！歷史新猷</span>
+                    <h2 class="champion-title">2026 114學年度國小棒球運動聯賽軟式組全國賽 <span class="highlight-gold">勇奪冠軍</span></h2>
+                    <p>成軍三年，德芙蘭小將憑藉著不屈的泰雅韌性，在全國殿堂上大放異彩，奪下校史首座全國聯賽最高榮耀金盃！</p>
+                </div>
+                <a href="https://www.youtube.com/watch?v=OGXzQywCKas" class="btn btn-gold">見證榮耀一刻</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="news section-padding bg-light">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">最新戰報</h2>
+                <div class="title-line"></div>
+            </div>
+            <div class="news-grid">
+                <article class="news-card gs-reveal">
+                    <div class="news-img">
+                        <img src="https://wkwtb1.github.io/tbulan/images/index/index-news-1.png" alt="114 學年度國小棒球聯賽比賽精彩瞬間">
+                        <div class="news-badge">奪冠狂賀</div>
+                    </div>
+                    <div class="news-content">
+                        <span class="news-date">2026.04.29</span>
+                        <h3 class="news-card-title">狂賀！勇奪114 學年度國小棒球聯賽（軟式組）冠軍</h3>
+                        <p class="news-card-desc">每一球都不放棄！感謝所有家長與球迷的支持，我們會繼續邁向最高殿堂。</p>
+                        <a href="honors.html" class="news-link">查看賽事紀錄 &rarr;</a>
+                    </div>
+                </article>
+                <article class="news-card gs-reveal">
+                    <div class="news-img">
+                        <img src="https://wkwtb1.github.io/tbulan/images/index/index-news-2.jpg" alt="2026 紅葉小巨人盃全國冠軍頒獎合照">
+                        <div class="news-badge">賽事速報</div>
+                    </div>
+                    <div class="news-content">
+                        <span class="news-date">2026.03.15</span>
+                        <h3 class="news-card-title">狂賀！勇奪 2026 紅葉小巨人盃全國冠軍</h3>
+                        <p class="news-card-desc">展現堅強實力，小將們將日常訓練化為賽場上的爆發力，力克群雄奪得隊史重要一冠！</p>
+                        <a href="honors.html" class="news-link">查看完整榮譽榜 &rarr;</a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <section class="spirit section-padding">
+        <div class="container spirit-container">
+            <div class="spirit-text gs-reveal">
+                <h2 class="section-title text-white">永不放棄的信念</h2>
+                <div class="title-line line-yellow"></div>
+                <p class="text-white mt-3">秉持泰雅族傳統精神——「勇敢、團結、與自然和諧相處」。我們深信，只要站在球場上，無論面對多強大的對手，都要展現「逆風奮戰」的韌性。棒球，是我們向世界展現驕傲的方式。</p>
+                <a href="team.html" class="btn btn-yellow mt-4">查看英雄陣容</a>
+            </div>
+            <div class="spirit-image gs-reveal">
+                <img src="https://via.placeholder.com/800x600/F6A536/FFFFFF?text=Team+Spirit" alt="球員充滿堅定眼神的訓練特寫相片">
+            </div>
+        </div>
+    </section>
+
+    <section class="partners section-padding bg-light">
+        <div class="container">
+            <div class="section-header center">
+                <h2 class="section-title">感謝有您，夢想齊飛</h2>
+                <!--
+                <p class="section-subtitle">感謝以下企業與社團的鼎力相助，讓偏鄉棒球得以茁壯</p>
+                -->
+            </div>
+            <!--
+            <div class="partners-grid gs-reveal">
+                <div class="partner-item"><img src="https://via.placeholder.com/200x100/DDDDDD/666666?text=金豐禾企業" alt="金豐禾企業 Logo"></div>
+                <div class="partner-item"><img src="https://via.placeholder.com/200x100/DDDDDD/666666?text=頂新和德文教" alt="頂新和德文教基金會 Logo"></div>
+                <div class="partner-item"><img src="https://via.placeholder.com/200x100/DDDDDD/666666?text=張泰山協會" alt="張泰山運動人文教育協會 Logo"></div>
+
+                <div class="partner-item"><img src="https://via.placeholder.com/200x100/DDDDDD/666666?text=聯青社" alt="長松國際聯青社 Logo"></div>
+                <div class="partner-item"><img src="https://via.placeholder.com/200x100/DDDDDD/666666?text=新世代關懷" alt="台灣新世代關懷協會 Logo"></div>
+            </div>
+             -->
+            <div class="center mt-4">
+                <a href="contact.html" class="btn btn-outline">了解如何支持我們</a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container footer-container">
+            <div class="footer-info">
+                <h3>德芙蘭國小少棒隊</h3>
+                <p>📍 台中市和平區東關路一段松鶴三巷 10 號 (松鶴部落)</p>
+                <p>📞 聯絡電話：學校總機</p>
+            </div>
+            <div class="footer-links">
+                <h4>快速連結</h4>
+                <ul>
+                    <li><a href="about.html">關於德芙蘭</a></li>
+                    <li><a href="model.html">德芙蘭模式</a></li>
+                    <li><a href="honors.html">榮譽殿堂</a></li>
+                    <li><a href="contact.html">聯絡我們</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 德芙蘭國小少棒隊. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
+
+--- FILE: inner-page.css ---
+/* ==========================================================================
+   德芙蘭少棒隊 - 內頁專屬樣式 (Inner Pages Styles)
+   請將此檔案與 style.css 放在一起，並在子頁面中引入
+   ========================================================================== */
+
+/* 內頁 Hero 橫幅 */
+.page-header {
+    position: relative;
+    height: 40vh;
+    min-height: 350px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-top: 80px; /* 閃避固定的 Navbar */
+    overflow: hidden;
+}
+
+.page-header-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.page-header-bg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.page-header-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(0deg, rgba(45, 66, 99, 0.9) 0%, rgba(45, 66, 99, 0.5) 100%);
+}
+
+.page-title {
+    color: var(--clr-white);
+    font-size: 3rem;
+    font-weight: 900;
+    position: relative;
+    z-index: 1;
+    letter-spacing: 2px;
+}
+
+.page-title::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 4px;
+    background-color: var(--clr-accent-yellow);
+    margin: 15px auto 0;
+    border-radius: 2px;
+}
+
+/* ==========================================================================
+   關於我們 - 圖文交錯佈局
+   ========================================================================== */
+.story-block {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    margin-bottom: 80px;
+}
+
+.story-block:nth-child(even) {
+    flex-direction: row-reverse;
+}
+
+.story-content {
+    flex: 1;
+}
+
+.story-image {
+    flex: 1;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: var(--shadow-soft);
+}
+
+.story-image img {
+    width: 100%;
+    transition: transform 0.5s ease;
+}
+
+.story-block:hover .story-image img {
+    transform: scale(1.03);
+}
+
+.story-tag {
+    display: inline-block;
+    padding: 5px 15px;
+    background-color: var(--clr-accent-yellow);
+    color: var(--clr-text-main);
+    font-weight: 900;
+    border-radius: 20px;
+    margin-bottom: 15px;
+    font-size: 0.9rem;
+}
+
+/* ==========================================================================
+   球隊陣容 - 選手卡片網格
+   ========================================================================== */
+.coach-section {
+    background-color: var(--clr-bg-secondary);
+    border-radius: 12px;
+    padding: 40px;
+    margin-bottom: 60px;
+    border-left: 5px solid var(--clr-accent-red);
+}
+
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+}
+
+.player-card {
+    background-color: var(--clr-white);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: var(--shadow-soft);
+    position: relative;
+    transition: all var(--transition-speed);
+}
+
+.player-card:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--shadow-hover);
+}
+
+.player-img {
+    height: 350px;
+    position: relative;
+    background-color: #E2E8F0;
+}
+
+.player-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top center;
+}
+
+.player-number {
+    position: absolute;
+    bottom: -20px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    background-color: var(--clr-accent-red);
+    color: var(--clr-white);
+    font-size: 1.8rem;
+    font-weight: 900;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    border: 4px solid var(--clr-white);
+    z-index: 2;
+}
+
+.player-info {
+    padding: 35px 25px 25px;
+}
+
+.player-role {
+    color: var(--clr-accent-yellow);
+    font-weight: 900;
+    font-size: 0.9rem;
+    margin-bottom: 5px;
+}
+
+.player-name {
+    font-size: 1.6rem;
+    font-weight: 900;
+    margin-bottom: 10px;
+    color: var(--clr-text-main);
+}
+
+.player-desc {
+    color: var(--clr-text-light);
+    font-size: 0.95rem;
+}
+
+/* 響應式調整 */
+@media (max-width: 768px) {
+    .story-block, .story-block:nth-child(even) {
+        flex-direction: column;
+        gap: 30px;
+    }
+    .page-title { font-size: 2.2rem; }
+}
+
+--- FILE: main.js ---
+document.addEventListener("DOMContentLoaded", (event) => {
+
+    // ----------------------------------------------------
+    // 0. 手機版漢堡選單開關邏輯 (Mobile Menu)
+    // ----------------------------------------------------
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const navLinks = document.getElementById('navLinks');
+
+    if (mobileMenuBtn && navLinks) {
+        mobileMenuBtn.addEventListener('click', () => {
+            // 切換按鈕的 X 動畫狀態與選單的展開狀態
+            mobileMenuBtn.classList.toggle('active');
+            navLinks.classList.toggle('active');
+        });
+
+        // 點擊選單內的連結後，自動收起選單 (提升 UX)
+        navLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenuBtn.classList.remove('active');
+                navLinks.classList.remove('active');
+            });
+        });
+    }
+
+    // 檢查 GSAP 是否有成功載入
+    if (typeof gsap !== 'undefined') {
+        // 註冊 GSAP ScrollTrigger 插件
+        gsap.registerPlugin(ScrollTrigger);
+
+        // ----------------------------------------------------
+        // 1. 載入進場爆發力動效 (Hero Section)
+        // ----------------------------------------------------
+        // 確保目前頁面有 Hero 區塊才執行 (避免在子頁面報錯)
+        if (document.querySelector(".hero-subtitle")) {
+            const heroTl = gsap.timeline();
+
+            heroTl.from(".hero-subtitle", {
+                y: 30,
+                opacity: 0,
+                duration: 0.8,
+                ease: "power3.out",
+                delay: 0.2
+            })
+            .from(".hero-title", {
+                y: 50,
+                opacity: 0,
+                duration: 1,
+                ease: "back.out(1.5)" // 彈性爆發感
+            }, "-=0.4")
+            .from(".hero-desc", {
+                y: 20,
+                opacity: 0,
+                duration: 0.8,
+                ease: "power2.out"
+            }, "-=0.6")
+            .from(".hero .btn", {
+                scale: 0.8,
+                opacity: 0,
+                duration: 0.5,
+                ease: "back.out(2)"
+            }, "-=0.4");
+        }
+
+        // ----------------------------------------------------
+        // 2. 滾動揭示動效 (Scroll Reveal)
+        // ----------------------------------------------------
+        const revealElements = document.querySelectorAll(".gs-reveal");
+
+        revealElements.forEach((elem) => {
+            gsap.fromTo(elem,
+                { autoAlpha: 0, y: 50 },
+                {
+                    duration: 1,
+                    autoAlpha: 1,
+                    y: 0,
+                    ease: "power3.out",
+                    scrollTrigger: {
+                        trigger: elem,
+                        start: "top 85%", // 當元素頂部到達視窗 85% 高度時觸發
+                        toggleActions: "play none none reverse" // 往下滾動播放，往上滾動還原
+                    }
+                }
+            );
+        });
+    }
+
+    // ----------------------------------------------------
+    // 3. Navbar 滾動陰影變化
+    // ----------------------------------------------------
+    const navbar = document.getElementById("navbar");
+    if (navbar) {
+        window.addEventListener("scroll", () => {
+            if (window.scrollY > 50) {
+                navbar.style.boxShadow = "0 4px 20px rgba(0,0,0,0.1)";
+            } else {
+                navbar.style.boxShadow = "0 2px 15px rgba(0,0,0,0.05)";
+            }
+        });
+    }
+});
+
+--- FILE: model.html ---
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>德芙蘭模式 Tbulan Model | 德芙蘭少棒隊</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="inner-page.css">
+</head>
+<body>
+    <header class="navbar" id="navbar">
+        <div class="container nav-container">
+            <div class="logo"><a href="index.html">⚾ 德芙蘭少棒隊</a></div>
+
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <nav class="nav-links" id="navLinks">
+                <a href="index.html">首頁</a>
+                <a href="about.html">關於德芙蘭</a>
+                <a href="team.html">球隊陣容</a>
+                <a href="model.html">德芙蘭模式</a>
+                <a href="honors.html">榮譽殿堂</a>
+                <a href="support-backup1.html">社會支持</a>
+                <a href="contact.html">聯絡我們</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="page-header">
+        <div class="page-header-bg">
+            <img src="https://wkwtb1.github.io/tbulan/images/banner/model-banner.png" alt="德芙蘭國小高海拔操場剪影，展現文武雙全氣勢">
+            <div class="page-header-overlay"></div>
+        </div>
+        <h1 class="page-title gs-reveal">德芙蘭模式</h1>
+    </section>
+
+    <section class="section-padding">
+        <div class="container">
+            <div class="section-header center gs-reveal">
+                <h2 class="section-title">競技、學業與品格的平衡</h2>
+                <div class="title-line"></div>
+                <p class="section-subtitle">Tbulan 德芙蘭模式不僅培養優秀的球員，更致力於培養自律、負責的未來公民。</p>
+            </div>
+
+            <div class="story-block gs-reveal">
+                <div class="story-content">
+                    <span class="story-tag">紀律與毅力</span>
+                    <h2 class="section-title">晨操與夜訓：<br>迎著晨光的鋼鐵鍛鍊</h2>
+                    <p class="mt-3">在德芙蘭模式中，作息的規律是競技實力的基石。每天清晨 6 點，當山裡的微光剛現，小將們已經迎著新鮮空氣開始跑步訓練，喚醒身體活力。</p>
+                    <p class="mt-3">下午 4 點放學後，則展開扎實的技術練習與戰術模擬。日復一日的晨操與夜訓，琢磨出孩子們不凡的毅力與逆風奮戰的泰雅精神。</p>
+                </div>
+                <div class="story-image">
+                    <img src="https://wkwtb1.github.io/tbulan/images/model/model-training.png" alt="球員們陽光灑在操場，球員整齊跑步訓練的照片">
+                </div>
+            </div>
+
+            <div class="story-block gs-reveal">
+                <div class="story-content">
+                    <span class="story-tag">自律與照顧</span>
+                    <h2 class="section-title">獨立生活：<br>日常生活即是訓練</h2>
+                    <p class="mt-3">球隊採住宿制管理，球員每兩週返家一次。在這裡，日常生活本身就是一種重要的品格訓練。</p>
+                    <p class="mt-3">在教練團與老師的引導下，孩子們學會自己疊棉被、整理寢室內務、清洗自己的衣物與整理球具。這種住宿生活培養了小將們獨立自理的能力，更在團隊共處中學會了互相照顧、團結合作的兄弟情誼。</p>
+                </div>
+                <div class="story-image">
+                    <img src="https://via.placeholder.com/600x400/F6A536/FFFFFF?text=Independent+Life+Photo" alt="球員在宿舍自己疊棉被、整理內務、整理球具的獨立生活照">
+                </div>
+            </div>
+
+            <div class="story-block gs-reveal">
+                <div class="story-content">
+                    <span class="story-tag">文武雙全</span>
+                    <h2 class="section-title">學業並重：<br>完成作業是基本要求</h2>
+                    <p class="mt-3">打球絕對不是荒廢學業的藉口。球隊嚴格規定晚間 6:30 至 8:00 為「課業輔導時間」。</p>
+                    <p class="mt-3">教練與學校老師共同監督，確保每一位小球員不因賽事而落下成績。校長一再強調：「在成為好球員之前，必須先成為好學生。」同時，球隊也提供免費的營養早、午、晚餐，確保發育期的學童能有充足的體能後盾。</p>
+                </div>
+                <div class="story-image">
+                    <img src="/images/model/model-learning.jpg" alt="球員們夜間在教室專心寫作業的情境">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container footer-container">
+            <div class="footer-info">
+                <h3>Tbulan 德芙蘭國小少棒隊</h3>
+                <p>📍 台中市和平區松鶴三巷 10 號</p>
+            </div>
+        </div>
+        <div class="footer-bottom"><p>&copy; 2026 Tbulan Baseball Team. All Rights Reserved.</p></div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
+
+--- FILE: readme.txt ---
+======================================================
+德芙蘭國小少棒隊 - 網站建置指南與資源清單
+======================================================
+目錄結構：
+/defulan-baseball
+  ├── index.html   (首頁)
+  ├── style.css    (全站與首頁共用樣式)
+  ├── main.js      (全站共用動態腳本)
+  └── /images      (請自行建立此資料夾存放圖片)
+
+圖片替換指南：
+目前網頁中的圖片使用了預留位置 (Placeholder)，例如：
+<img src="https://via.placeholder.com/1920x800/2D4263/FFFFFF?text=Hero+Image" alt="高海拔 800 公尺的操場景觀與球員訓練的熱血大圖">
+
+當您準備好真實的照片後，請將照片存入 /images 資料夾，並修改 HTML 中的 src 屬性，例如：
+<img src="./images/hero-bg.jpg" alt="高海拔 800 公尺的操場景觀與球員訓練的熱血大圖">
+
+📸 全站圖片準備清單 (共 28 張)
+1. 首頁 (index.html) - 共 9 張
+建議檔名	建議尺寸/比例	圖片內容需求與畫面描述
+* hero-bg.jpg	1920x1080 (16:9)	主視覺大圖：高海拔 800 公尺的操場景觀與球員訓練的熱血大圖。
+*	600x400 (3:2)	賽事新聞圖：114 學年度國小棒球聯賽（軟式組）比賽精彩瞬間。
+index-news-2.jpg	600x400 (3:2)	賽事新聞圖：2026 紅葉小巨人盃全國冠軍頒獎合照。
+index-spirit.jpg	800x600 (4:3)	精神象徵圖：展現「永不放棄」信念的球員特寫或練球背影（充滿堅定的眼神）。
+partner-logo-1.png	200x100 左右	贊助商 Logo (需去背)：金豐禾企業
+partner-logo-2.png	200x100 左右	贊助商 Logo (需去背)：頂新和德文教基金會
+partner-logo-3.png	200x100 左右	贊助商 Logo (需去背)：長松國際聯青社
+partner-logo-4.png	200x100 左右	贊助商 Logo (需去背)：張泰山運動人文教育協會
+partner-logo-5.png	200x100 左右	贊助商 Logo (需去背)：台灣新世代關懷協會
+2. 關於德芙蘭 (about.html) - 共 4 張
+建議檔名	建議尺寸/比例	圖片內容需求與畫面描述
+* about-banner.jpg	1920x600 (超寬)	頁首橫幅：德芙蘭國小壯麗的山景與棒球場全景。
+* about-school.jpg	600x400 (3:2)	內文配圖：德芙蘭國小校門口，建議帶有泰雅族圖騰或學校招牌。
+*about-practice.jpg	600x400 (3:2)	內文配圖：球員們在操場上辛苦練球的畫面，展現逆風奮戰精神。
+*about-huddle.jpg	600x400 (3:2)	內文配圖：跨校聯隊球員們搭肩圓陣加油的畫面，展現團結感。
+3. 德芙蘭模式 (model.html) - 共 4 張
+建議檔名	建議尺寸/比例	圖片內容需求與畫面描述
+model-banner.jpg	1920x600 (超寬)	頁首橫幅：高海拔操場剪影，展現文武雙全氣勢。
+model-training.jpg	600x400 (3:2)	內文配圖：晨操與夜訓，早晨陽光灑在操場，球員整齊跑步或技術練習的動態照片。
+model-dorm.jpg	600x400 (3:2)	內文配圖：獨立生活，球員在宿舍自己疊棉被、整理內務、整理球具的溫馨日常。
+model-study.jpg	600x400 (3:2)	內文配圖：學業並重，球員夜間在教室專心寫作業的情境。
+4. 球隊陣容 (team.html) - 共 4 張
+建議檔名	建議尺寸/比例	圖片內容需求與畫面描述
+team-banner.jpg	1920x600 (超寬)	頁首橫幅：全體球員與教練團熱血大合照。
+*player-10.jpg	400x500 (4:5)	球員卡片：涂易恩（10號）打擊姿勢的全身或半身帥氣照片。
+*player-1.jpg	400x500 (4:5)	球員卡片：張子恩（1號）投球姿勢的全身或半身帥氣照片。
+*player-24.jpg	400x500 (4:5)	球員卡片：巫克迪（24號）專注防守或接球的照片。
+5. 榮譽殿堂 (honors.html) - 共 2 張
+建議檔名	建議尺寸/比例	圖片內容需求與畫面描述
+honors-banner.jpg	1920x600 (超寬)	頁首橫幅：球員高舉獎盃慶祝的榮耀時刻（建議挑選最具代表性的大賽）。
+honors-champ.jpg	400x300 (4:3)	高光配圖：2026 114學年度國小棒球運動聯賽軟式組全國賽的冠軍大合照。
+6. 社會支持 (support.html) - 共 4 張
+建議檔名	建議尺寸/比例	圖片內容需求與畫面描述
+support-banner.jpg	1920x600 (超寬)	頁首橫幅：球員與贊助企業或善心人士開心合影的照片。
+support-van.jpg	400x300 (4:3)	卡片配圖：金豐禾企業捐贈的 Hyundai Staria 九人座休旅車與球員合影。
+support-dorm.jpg	400x300 (4:3)	卡片配圖：長松國際聯青社修繕後的溫馨宿舍內部環境照。
+support-equip.jpg	400x300 (4:3)	卡片配圖：各界捐贈的球具、釘鞋與營養品等物資照片。
+7. 聯絡我們 (contact.html) - 共 1 張
+建議檔名	建議尺寸/比例	圖片內容需求與畫面描述
+contact-banner.jpg	1920x600 (超寬)	頁首橫幅：教練與球員們充滿笑容、熱烈歡迎的合照。
+
+圖片準備建議清單 (首頁需使用)：
+* 1. hero-bg.jpg (高海拔操場與球員訓練大圖，建議比例 16:9 或超寬比例)
+2. news-champion.jpg (2026 紅葉小巨人盃奪冠合照，建議比例 4:3)
+3. spirit-bg.jpg (展現「永不放棄」信念的球員特寫或練球背影，建議比例 16:9)
+4. partner-logo-1.png, partner-logo-2.png... (贊助商 Logo 去背檔)
+
+
+圖片準備建議清單 (model.html 德芙蘭模式頁面):
+1. model-header.jpg (頁首大圖：建議使用高海拔操場剪影，展現文武雙全氣勢)
+2. model-training.jpg (【新增】晨操與夜訓照片：建議使用早晨陽光灑在操場，球員整齊跑步或技術練習的動態照片)
+3. model-dorm.jpg (【新增】獨立生活照片：建議使用球員在宿舍自己疊棉被、整理內務、整理球具的溫馨日常照片)
+4. model-study.jpg (學業並重照片：球員夜間專心寫作業的情境)
+5. model-violin.jpg (多元特色照片：球員穿著球衣拿小提琴，呈現強烈對比)
+
+--- FILE: style.css ---
+/* ==========================================================================
+   全站變數與重置 (Variables & Reset)
+   ========================================================================== */
+:root {
+    /* 60-30-10 配色原則 */
+    --clr-bg-primary: #FDFBF7; /* 60% 暖米白 */
+    --clr-bg-secondary: #F4EFE6; /* 淺卡其，用於區塊交替 */
+    --clr-text-main: #2D4263; /* 30% 深邃藍灰 */
+    --clr-text-light: #5B6D85;
+    --clr-accent-red: #C84B31; /* 10% 熱血磚紅 */
+    --clr-accent-yellow: #F6A536; /* 10% 陽光金黃 */
+    --clr-white: #FFFFFF;
+
+    --font-main: 'Noto Sans TC', sans-serif;
+    --transition-speed: 0.3s;
+    --shadow-soft: 0 10px 30px rgba(45, 66, 99, 0.08);
+    --shadow-hover: 0 15px 40px rgba(200, 75, 49, 0.15);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-main);
+    background-color: var(--clr-bg-primary);
+    color: var(--clr-text-main);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: color var(--transition-speed);
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.section-padding {
+    padding: 100px 0;
+}
+
+.bg-light {
+    background-color: var(--clr-bg-secondary);
+}
+
+.text-white { color: var(--clr-white); }
+.text-highlight { color: var(--clr-accent-yellow); }
+.mt-3 { margin-top: 1.5rem; }
+.mt-4 { margin-top: 2rem; }
+.center { text-align: center; }
+
+/* ==========================================================================
+   Typography & Titles
+   ========================================================================== */
+.section-title {
+    font-size: 2.5rem;
+    font-weight: 900;
+    margin-bottom: 0.5rem;
+}
+
+.section-subtitle {
+    font-size: 1.1rem;
+    color: var(--clr-text-light);
+    margin-bottom: 2rem;
+}
+
+.title-line {
+    width: 60px;
+    height: 4px;
+    background-color: var(--clr-accent-red);
+    margin-bottom: 2rem;
+    border-radius: 2px;
+}
+.title-line.line-yellow { background-color: var(--clr-accent-yellow); }
+.section-header.center .title-line { margin: 0 auto 2rem auto; }
+
+/* ==========================================================================
+   Buttons
+   ========================================================================== */
+.btn {
+    display: inline-block;
+    padding: 12px 32px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all var(--transition-speed);
+    text-align: center;
+}
+
+.btn-primary {
+    background-color: var(--clr-accent-red);
+    color: var(--clr-white);
+    box-shadow: 0 4px 15px rgba(200, 75, 49, 0.3);
+}
+
+.btn-primary:hover {
+    background-color: #A63C26;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(200, 75, 49, 0.4);
+}
+
+.btn-yellow {
+    background-color: var(--clr-accent-yellow);
+    color: var(--clr-text-main);
+}
+
+.btn-yellow:hover {
+    background-color: #E0942E;
+    transform: translateY(-3px);
+}
+
+.btn-outline {
+    border: 2px solid var(--clr-accent-red);
+    color: var(--clr-accent-red);
+}
+
+.btn-outline:hover {
+    background-color: var(--clr-accent-red);
+    color: var(--clr-white);
+}
+
+/* ==========================================================================
+    Navbar (包含手機版整合)
+   ========================================================================== */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(253, 251, 247, 0.95);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+    box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+    transition: all var(--transition-speed);
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+}
+
+.logo a {
+    font-size: 1.5rem;
+    font-weight: 900;
+    color: var(--clr-accent-red);
+}
+
+.nav-links {
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-links a {
+    font-weight: 700;
+    font-size: 1rem;
+    position: relative;
+}
+
+.nav-links a:hover, .nav-links a.active {
+    color: var(--clr-accent-red);
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0%;
+    height: 3px;
+    background-color: var(--clr-accent-red);
+    transition: width var(--transition-speed);
+}
+
+.nav-links a:hover::after, .nav-links a.active::after {
+    width: 100%;
+}
+
+/* 漢堡按鈕基礎樣式 (桌機隱藏) */
+.mobile-menu-btn {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    z-index: 1001; /* 確保在選單之上 */
+}
+
+.mobile-menu-btn span {
+    width: 100%;
+    height: 3px;
+    background-color: var(--clr-accent-red);
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+/* --- 手機版 Navbar RWD --- */
+@media (max-width: 768px) {
+    /* 顯示漢堡按鈕 */
+    .mobile-menu-btn {
+        display: flex;
+    }
+
+    /* 手機版滑動選單面板 */
+    .nav-links {
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 70%; /* 選單寬度 */
+        height: 100vh;
+        background-color: #1a2a44; /* 深藍色背景 */
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 25px;
+        box-shadow: -5px 0 15px rgba(0,0,0,0.5);
+
+        /* 預設隱藏在右側 */
+        transform: translateX(100%);
+        transition: transform 0.4s ease-in-out;
+    }
+
+    /* 開啟選單 */
+    .nav-links.active {
+        transform: translateX(0);
+    }
+
+    /* 手機版連結字體樣式 */
+    .nav-links a {
+        color: #ffffff;
+        font-size: 1.3rem;
+        width: 100%;
+        text-align: center;
+        padding: 10px 0;
+        border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+        color: var(--clr-accent-yellow);
+    }
+
+    /* 漢堡按鈕變 X 動畫 */
+    .mobile-menu-btn.active span {
+        background-color: var(--clr-accent-yellow);
+    }
+    .mobile-menu-btn.active span:nth-child(1) {
+        transform: translateY(9px) rotate(45deg);
+    }
+    .mobile-menu-btn.active span:nth-child(2) {
+        opacity: 0;
+    }
+    .mobile-menu-btn.active span:nth-child(3) {
+        transform: translateY(-9px) rotate(-45deg);
+    }
+}
+
+/* ==========================================================================
+   首頁 Hero 主視覺區塊
+   ========================================================================== */
+.hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden;
+    padding-top: 80px;
+}
+
+.hero-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.hero-bg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    animation: heroZoom 20s infinite alternate linear;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(45, 66, 99, 0.85) 0%, rgba(200, 75, 49, 0.5) 100%);
+}
+
+@keyframes heroZoom {
+    0% { transform: scale(1); }
+    100% { transform: scale(1.15); }
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    color: var(--clr-white);
+    max-width: 800px;
+}
+
+.hero-subtitle {
+    display: inline-block;
+    font-size: 1.2rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+    color: var(--clr-accent-yellow);
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 5px 15px;
+    border-radius: 20px;
+    backdrop-filter: blur(5px);
+}
+
+.hero-title {
+    font-size: 4.5rem;
+    font-weight: 900;
+    line-height: 1.2;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.hero-desc {
+    font-size: 1.5rem;
+    font-weight: 400;
+    margin-bottom: 40px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.hero-actions {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+@media (max-width: 768px) {
+    .hero-title { font-size: 3rem; }
+    .hero-desc { font-size: 1.2rem; }
+    .hero-actions { flex-direction: column; padding: 0 20px; }
+}
+
+/* ==========================================================================
+   進階揮棒擊出特效
+   ========================================================================== */
+.strike-container {
+    margin: 20px 0 35px;
+    position: relative;
+    overflow: visible;
+    min-height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.baseball-pitch {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background-color: #fff;
+    border-radius: 50%;
+    background-image:
+        radial-gradient(circle at 15% 50%, transparent 11px, var(--clr-accent-red) 12px, transparent 13px),
+        radial-gradient(circle at 85% 50%, transparent 11px, var(--clr-accent-red) 12px, transparent 13px);
+    box-shadow: inset -2px -2px 6px rgba(0,0,0,0.2), 0 2px 10px rgba(255,255,255,0.8);
+    z-index: 10;
+    opacity: 0;
+    animation: windupSpin 2s linear forwards, pitchThrow 0.1s ease-in 2s forwards;
+}
+
+.batting-strike {
+    font-size: 2.5rem;
+    font-weight: 900;
+    color: var(--clr-white);
+    text-shadow: 3px 3px 0 var(--clr-accent-red), -1px -1px 0 rgba(0,0,0,0.5);
+    display: inline-block;
+    transform: skewX(-12deg);
+    position: relative;
+    letter-spacing: 2px;
+    opacity: 0;
+    z-index: 5;
+    animation: textHit 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) 2.1s forwards;
+}
+
+.batting-strike::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: -15%;
+    width: 0;
+    height: 8px;
+    background-color: var(--clr-accent-yellow);
+    box-shadow: 0 0 15px var(--clr-accent-yellow), 0 0 30px #ffffff;
+    border-radius: 10px;
+    transform: translateY(-50%) rotate(-4deg);
+    z-index: 2;
+    pointer-events: none;
+    animation: swingSlash 0.4s ease-out 2.2s forwards;
+}
+
+.batting-strike::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 40%;
+    width: 10px;
+    height: 10px;
+    background: #fff;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 0 50px 30px rgba(255, 255, 255, 0.9);
+    opacity: 0;
+    z-index: 1;
+    pointer-events: none;
+    animation: boomFlash 0.4s ease-out 2.1s forwards;
+}
+
+@keyframes windupSpin {
+    0% { opacity: 0; transform: rotate(0deg) translateX(50px) rotate(0deg); }
+    10% { opacity: 1; transform: rotate(108deg) translateX(50px) rotate(-108deg); }
+    100% { opacity: 1; transform: rotate(1080deg) translateX(50px) rotate(-1080deg); }
+}
+@keyframes pitchThrow {
+    0% { opacity: 1; transform: rotate(1080deg) translateX(50px) scale(1); }
+    100% { opacity: 0; transform: rotate(1080deg) translateX(0px) scale(0.2); }
+}
+@keyframes textHit {
+    0% { opacity: 0; transform: scale(0.3) skewX(-12deg); }
+    70% { opacity: 1; transform: scale(1.1) skewX(-12deg); }
+    100% { opacity: 1; transform: scale(1) skewX(-12deg); }
+}
+@keyframes swingSlash {
+    0% { width: 0; left: -15%; opacity: 1; }
+    50% { width: 130%; left: -15%; opacity: 1; }
+    100% { width: 0; left: 115%; opacity: 0; }
+}
+@keyframes boomFlash {
+    0% { opacity: 0; transform: translate(-50%, -50%) scale(0); }
+    30% { opacity: 1; transform: translate(-50%, -50%) scale(2.5); }
+    100% { opacity: 0; transform: translate(-50%, -50%) scale(4); }
+}
+
+@media (max-width: 768px) {
+    .batting-strike { font-size: 1.6rem; text-shadow: 2px 2px 0 var(--clr-accent-red); }
+    @keyframes windupSpin {
+        0% { opacity: 0; transform: rotate(0deg) translateX(30px) rotate(0deg); }
+        100% { opacity: 1; transform: rotate(1080deg) translateX(30px) rotate(-1080deg); }
+    }
+}
+
+/* ==========================================================================
+   🏆 首頁冠軍快報橫幅
+   ========================================================================== */
+.champion-banner {
+    background: linear-gradient(135deg, #1a2a44 0%, #0d1b2a 100%);
+    padding: 40px 0;
+    border-top: 4px solid var(--clr-accent-yellow);
+    border-bottom: 4px solid var(--clr-accent-yellow);
+    box-shadow: 0 10px 30px rgba(246, 165, 54, 0.15);
+    position: relative;
+    overflow: hidden;
+}
+.champion-banner::before {
+    content: ''; position: absolute; top: -50%; left: -10%;
+    width: 300px; height: 300px;
+    background: radial-gradient(circle, rgba(246,165,54,0.2) 0%, transparent 70%); z-index: 0;
+}
+.champion-content { display: flex; align-items: center; gap: 30px; position: relative; z-index: 1; }
+.champion-icon { font-size: 5rem; line-height: 1; filter: drop-shadow(0 0 15px rgba(246, 165, 54, 0.6)); animation: floatTrophy 3s ease-in-out infinite; }
+.champion-text { flex: 1; }
+.champion-tag { display: inline-block; background-color: var(--clr-accent-red); color: #fff; padding: 4px 12px; border-radius: 20px; font-size: 0.9rem; font-weight: 700; margin-bottom: 10px; }
+.champion-title { color: #fff; font-size: 1.8rem; margin-bottom: 8px; }
+.highlight-gold { color: var(--clr-accent-yellow); font-size: 2.2rem; font-weight: 900; text-shadow: 0 0 15px rgba(246, 165, 54, 0.5); }
+.champion-text p { color: #cbd5e1; margin: 0; font-size: 1.1rem; }
+.btn-gold { background-color: var(--clr-accent-yellow); color: #0d1b2a; font-weight: 900; box-shadow: 0 4px 15px rgba(246, 165, 54, 0.4); }
+.btn-gold:hover { background-color: #fff; transform: translateY(-3px); }
+@keyframes floatTrophy { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+@media (max-width: 768px) {
+    .champion-content { flex-direction: column; text-align: center; gap: 20px; }
+    .champion-title { font-size: 1.4rem; }
+    .highlight-gold { font-size: 1.8rem; display: block; margin-top: 5px;}
+}
+
+/* ==========================================================================
+   賽事速報區塊
+   ========================================================================== */
+.news-list { max-width: 800px; margin: 0 auto; display: flex; flex-direction: column; gap: 15px; }
+.news-item { display: flex; align-items: center; background-color: var(--clr-white); padding: 20px 25px; border-radius: 10px; text-decoration: none; color: var(--clr-text-main); box-shadow: var(--shadow-soft); transition: all 0.3s ease; border-left: 4px solid transparent; }
+.news-item:hover { transform: translateY(-3px); box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1); border-left-color: var(--clr-primary); }
+.highlight-news { border-left: 4px solid var(--clr-accent-yellow); background: linear-gradient(to right, rgba(246, 165, 54, 0.05), white); }
+.highlight-news:hover { border-left-color: var(--clr-accent-red); }
+.news-date { font-weight: 700; color: var(--clr-text-light); font-size: 1.1rem; min-width: 110px; }
+.news-tag { font-size: 0.85rem; font-weight: 700; padding: 4px 12px; border-radius: 20px; margin-right: 20px; white-space: nowrap; }
+.tag-gold { background-color: var(--clr-accent-yellow); color: #000; }
+.tag-primary { background-color: var(--clr-primary); color: #fff; }
+.news-title { flex: 1; font-size: 1.15rem; font-weight: 700; }
+.text-red { color: var(--clr-accent-red); }
+.news-arrow { color: var(--clr-text-light); font-weight: bold; transition: transform 0.3s ease; }
+.news-item:hover .news-arrow { transform: translateX(5px); color: var(--clr-primary); }
+@media (max-width: 768px) {
+    .news-item { flex-wrap: wrap; padding: 15px; gap: 10px; }
+    .news-date { width: 100%; font-size: 1rem; margin-bottom: 5px; }
+    .news-title { width: 100%; font-size: 1.1rem; margin-top: 5px; }
+    .news-arrow { display: none; }
+}
+
+/* ==========================================================================
+   其他共用區塊 (Team Spirit, Partners, Footer)
+   ========================================================================== */
+.spirit { background-color: var(--clr-text-main); position: relative; z-index: 1; clip-path: polygon(0 5%, 100% 0, 100% 95%, 0 100%); padding: 150px 0; }
+.spirit-container { display: flex; align-items: center; gap: 50px; }
+.spirit-text { flex: 1; }
+.spirit-image { flex: 1; border-radius: 12px; overflow: hidden; box-shadow: 0 20px 50px rgba(0,0,0,0.3); transform: rotate(2deg); }
+.spirit-image img { width: 100%; height: auto; }
+.partners-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 30px; margin-top: 40px; }
+.partner-item { background-color: var(--clr-white); padding: 20px; border-radius: 8px; box-shadow: var(--shadow-soft); width: 200px; display: flex; align-items: center; justify-content: center; transition: transform var(--transition-speed); }
+.partner-item:hover { transform: translateY(-5px); }
+.footer { background-color: var(--clr-text-main); color: var(--clr-white); padding: 60px 0 20px; }
+.footer-container { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 40px; margin-bottom: 40px; }
+.footer-info h3 { font-size: 1.5rem; color: var(--clr-accent-yellow); margin-bottom: 15px; }
+.footer-info p { color: #A0ABC0; margin-bottom: 10px; }
+.footer-links h4 { font-size: 1.2rem; margin-bottom: 15px; }
+.footer-links ul { list-style: none; }
+.footer-links ul li { margin-bottom: 10px; }
+.footer-links ul li a { color: #A0ABC0; }
+.footer-links ul li a:hover { color: var(--clr-accent-yellow); }
+.footer-bottom { text-align: center; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.1); color: #A0ABC0; font-size: 0.9rem; }
+@media (max-width: 992px) {
+    .spirit-container { flex-direction: column; }
+    .spirit { clip-path: polygon(0 3%, 100% 0, 100% 97%, 0 100%); padding: 100px 0; }
+}
+@media (max-width: 768px) {
+    .section-title { font-size: 2rem; }
+}
+
+/* 最新戰報 卡片版 */
+.news-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+}
+
+.news-card {
+    background: var(--clr-white);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: var(--shadow-soft);
+    transition: all 0.3s ease;
+}
+
+.news-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-hover);
+}
+
+/* 圖片 */
+.news-img {
+    position: relative;
+}
+
+.news-img img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+}
+
+/* 左上角標籤 */
+.news-badge {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: var(--clr-accent-red);
+    color: #fff;
+    padding: 5px 12px;
+    font-size: 0.8rem;
+    border-radius: 20px;
+}
+
+/* 文字區 */
+.news-content {
+    padding: 20px;
+}
+
+.news-card-title {
+    font-size: 1.3rem;
+    font-weight: 900;
+    margin: 10px 0;
+}
+
+.news-card-desc {
+    color: var(--clr-text-light);
+    margin-bottom: 15px;
+}
+
+.news-link {
+    color: var(--clr-accent-red);
+    font-weight: 700;
+}
+
+/* RWD */
+@media (max-width: 768px) {
+    .news-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+--- FILE: support-backup1.html ---
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>社會支持與捐贈 | 德芙蘭少棒隊</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="inner-page.css">
+</head>
+<body>
+    <header class="navbar" id="navbar">
+        <div class="container nav-container">
+            <div class="logo"><a href="index.html">⚾ 德芙蘭少棒隊</a></div>
+
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <nav class="nav-links" id="navLinks">
+                <a href="index.html">首頁</a>
+                <a href="about.html">關於德芙蘭</a>
+                <a href="team.html">球隊陣容</a>
+                <a href="model.html">德芙蘭模式</a>
+                <a href="honors.html">榮譽殿堂</a>
+                <a href="support-backup1.html">社會支持</a>
+                <a href="contact.html">聯絡我們</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="page-header">
+        <div class="page-header-bg">
+            <img src="https://wkwtb1.github.io/tbulan/images/banner/about-banner.png" alt="球員與贊助企業開心合影的照片">
+            <div class="page-header-overlay"></div>
+        </div>
+        <h1 class="page-title gs-reveal">社會支持與感恩</h1>
+    </section>
+
+    <section class="section-padding">
+        <div class="container">
+            <div class="section-header center gs-reveal">
+                <h2 class="section-title">感謝每一雙推動夢想的手</h2>
+                <div class="title-line"></div>
+                <p class="section-subtitle">偏鄉資源匱乏，球隊得以持續運作、征戰四方，全仰賴各界善心人士與企業的鼎力支持。</p>
+            </div>
+
+            <div class="team-grid">
+                <article class="player-card gs-reveal">
+                    <div class="player-img" style="height: 250px;">
+                        <img src="https://wkwtb1.github.io/tbulan/images/support/support-van.jpg" alt="金豐禾企業捐贈的九人座休旅車">
+                    </div>
+                    <div class="player-info">
+                        <div class="player-role">交通安全守護</div>
+                        <h3 class="player-name">金豐禾企業</h3>
+                        <p class="player-desc">慷慨捐贈 Hyundai Staria 九人座休旅交通車，徹底解決了山區球員接送的安全問題，讓孩子們能安心往返賽場與部落。</p>
+                    </div>
+                </article>
+
+                <article class="player-card gs-reveal">
+                    <div class="player-img" style="height: 250px;">
+                        <img src="https://wkwtb1.github.io/tbulan/images/support/support-dorm.jpg" alt="長松國際聯青社修繕的溫馨宿舍">
+                    </div>
+                    <div class="player-info">
+                        <div class="player-role">溫暖的第二個家</div>
+                        <h3 class="player-name">長松國際聯青社</h3>
+                        <p class="player-desc">熱心贊助修繕少棒隊宿舍，全面翻新室內設施並加裝現代化設備，給予住宿球員一個溫馨、舒適的休息環境。</p>
+                    </div>
+                </article>
+
+                <article class="player-card gs-reveal">
+                    <div class="player-img" style="height: 250px;">
+                        <img src="https://wkwtb1.github.io/tbulan/images/support/support-equip.jpg" alt="各界捐贈的球具、球鞋與營養品">
+                    </div>
+                    <div class="player-info">
+                        <div class="player-role">實力後盾</div>
+                        <h3 class="player-name">各大協會與基金會</h3>
+                        <p class="player-desc">感謝「張泰山運動人文教育協會」捐贈釘鞋、「台灣新世代關懷協會」捐贈裝備、「頂新和德文教基金會」補助經費與營養品、「健康行旅學苑」加菜金。</p>
+                    </div>
+                </article>
+            </div>
+
+            <div class="center mt-4 gs-reveal" style="padding-top: 50px;">
+                <p style="font-size: 1.2rem; margin-bottom: 20px;">您的支持，能讓更多部落孩子站上投手丘！</p>
+                <a href="contact.html" class="btn btn-primary">與我們聯絡洽詢合作</a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container footer-container">
+            <div class="footer-info">
+                <h3>德芙蘭國小少棒隊</h3>
+                <p>📍 台中市和平區松鶴三巷 10 號</p>
+            </div>
+        </div>
+        <div class="footer-bottom"><p>&copy; 2026 德芙蘭國小少棒隊. All Rights Reserved.</p></div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
+
+--- FILE: support.html ---
+<!-- FILE: support.html -->
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>社會支持與捐贈 | 德芙蘭少棒隊</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="inner-page.css">
+    <style>
+        /* ==========================================================================
+           5x5 動態馬賽克贊助牆 專屬樣式
+           ========================================================================== */
+        :root {
+            /* 預先定義一套符合德芙蘭質感的低飽和度彩虹色 */
+            --rb-1: #C84B31; /* 泰雅紅 */
+            --rb-2: #F6A536; /* 活力金 */
+            --rb-3: #4CAF50; /* 山林綠 */
+            --rb-4: #2D4263; /* 深邃藍 */
+            --rb-5: #9C27B0; /* 星空紫 */
+            --rb-6: #FF7043; /* 夕陽橘 */
+        }
+
+        .mosaic-section {
+            background-color: var(--clr-bg-secondary);
+            padding: 80px 0;
+        }
+
+        .mosaic-container {
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
+            padding: 0 15px;
+        }
+
+        /* 網格系統：5行5列 */
+        .mosaic-wall {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 2px; /* 格子之間的微小間距，若要無縫可改為 0 */
+            background: #fff;
+            padding: 4px;
+            border-radius: 12px;
+            box-shadow: 0 20px 50px rgba(45, 66, 99, 0.15);
+            border: 2px solid var(--clr-accent-yellow);
+        }
+
+        /* 單個網格容器 */
+        .mosaic-cell {
+            aspect-ratio: 1 / 1; /* 確保為正方形 */
+            perspective: 1000px;
+            cursor: pointer;
+        }
+
+        /* 翻轉核心元件 */
+        .mosaic-inner {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            transition: transform 0.6s cubic-bezier(0.4, 0.2, 0.2, 1); /* 彈性的翻轉動畫 */
+            transform-style: preserve-3d;
+        }
+
+        /* 觸發翻轉 */
+        .mosaic-cell.is-flipped .mosaic-inner {
+            transform: rotateY(180deg);
+        }
+
+        /* 正面與背面共用設定 */
+/* 移除舊的背景圖片寫法，保留容器設定 */
+        .mosaic-front, .mosaic-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        /* ★ 新增：全新的等比例縮放底圖元件 */
+        .mosaic-bg-img {
+            position: absolute;
+            width: 500%;       /* 寬度等同於 5 格 (整面牆寬) */
+            height: 500%;      /* 高度等同於 5 格 (整面牆高) */
+            max-width: none;   /* 覆寫全域可能存在的限制 */
+            object-fit: cover; /* 關鍵魔法：等比例縮放，填滿不留白，多餘裁切 */
+            /* 利用 JS 傳入的變數，精準偏移這張大圖，讓每個格子顯示該看的部分 */
+            left: calc(var(--col) * -100%);
+            top: calc(var(--row) * -100%);
+            pointer-events: none; /* 避免干擾滑鼠事件 */
+        }
+
+        /* 背面：廠商資訊 */
+        .mosaic-back {
+            transform: rotateY(180deg);
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 10px;
+        }
+
+        /* 廠商名稱文字 */
+        .sponsor-name {
+            color: #ffffff;
+            font-weight: 900;
+            line-height: 1.3;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.9), 0 0 15px rgba(0,0,0,0.6);
+            z-index: 2;
+            /* 響應式文字大小：在小螢幕縮小，大螢幕放大 */
+            font-size: clamp(0.7rem, 2vw, 1.2rem);
+        }
+
+        @media (max-width: 768px) {
+            .mosaic-wall { gap: 1px; }
+            .sponsor-name { font-size: clamp(0.6rem, 2.5vw, 1rem); padding: 2px; }
+        }
+    </style>
+</head>
+<body>
+    <header class="navbar" id="navbar">
+        <div class="container nav-container">
+            <div class="logo"><a href="index.html">⚾ 德芙蘭少棒隊</a></div>
+
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <nav class="nav-links" id="navLinks">
+                <a href="index.html">首頁</a>
+                <a href="about.html">關於德芙蘭</a>
+                <a href="team.html">球隊陣容</a>
+                <a href="model.html">德芙蘭模式</a>
+                <a href="honors.html">榮譽殿堂</a>
+                <a href="support.html" class="active">社會支持</a>
+                <a href="contact.html">聯絡我們</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="page-header">
+        <div class="page-header-bg">
+            <!-- 沿用 about 橫幅或未來替換為 support-banner.jpg -->
+            <img src="https://wkwtb1.github.io/tbulan/images/banner/about-banner.png" alt="球員與贊助企業開心合影的照片">
+            <div class="page-header-overlay"></div>
+        </div>
+        <h1 class="page-title gs-reveal">社會支持與感恩</h1>
+    </section>
+
+    <!-- 5x5 動態馬賽克牆區域 -->
+    <section class="mosaic-section">
+        <div class="container">
+            <div class="section-header center gs-reveal">
+                <h2 class="section-title">感謝每一雙推動夢想的手</h2>
+                <div class="title-line"></div>
+                <p class="section-subtitle">移動滑鼠即可見證每一位默默支持偏鄉棒球的幕後英雄。</p>
+            </div>
+
+            <!-- 馬賽克牆容器 (內容將由 JS 自動生成) -->
+            <div class="mosaic-container gs-reveal">
+                <div class="mosaic-wall" id="mosaicWall"></div>
+            </div>
+
+            <div class="center mt-4 gs-reveal" style="padding-top: 60px;">
+                <p style="font-size: 1.2rem; margin-bottom: 20px; font-weight: 700; color: var(--clr-text-main);">您的支持，能讓更多部落孩子站上投手丘！</p>
+                <a href="contact.html" class="btn btn-primary">與我們聯絡洽詢合作</a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container footer-container">
+            <div class="footer-info">
+                <h3>德芙蘭國小少棒隊</h3>
+                <p>📍 台中市和平區松鶴三巷 10 號</p>
+            </div>
+        </div>
+        <div class="footer-bottom"><p>&copy; 2026 德芙蘭國小少棒隊. All Rights Reserved.</p></div>
+    </footer>
+
+    <!-- JS 腳本區域 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="main.js"></script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const wall = document.getElementById('mosaicWall');
+            if(!wall) return;
+
+            // 📋 贊助商資料庫 (未來可無限擴充，沒有照片的廠商請將 image 留空字串 "")
+            const sponsorsList =[
+                { name: "金豐禾企業", image: "https://wkwtb1.github.io/tbulan/images/support/support-van.jpg" },
+                { name: "長松國際聯青社", image: "https://wkwtb1.github.io/tbulan/images/support/support-dorm.jpg" },
+                { name: "張泰山協會", image: "" },
+                { name: "頂新和德文教", image: "" },
+                { name: "台灣新世代關懷", image: "https://wkwtb1.github.io/tbulan/images/support/support-equip.jpg" },
+                { name: "健康行旅學苑", image: "" },
+                { name: "熱心校友 匿名捐贈", image: "" },
+                { name: "松鶴部落發展協會", image: "" },
+                { name: "和平區農會", image: "" },
+                { name: "陳林愛心基金會", image: "" },
+                { name: "林務局東勢林區", image: "" }
+                // 您可以繼續往下新增至 20 家以上...
+            ];
+
+            // ⚙️ 生成 5x5 (共 25 格) 的馬賽克 //
+            for(let i = 0; i < 25; i++) {
+                // 建立 DOM 元素
+                const cell = document.createElement('div');
+                cell.className = 'mosaic-cell';
+
+                const inner = document.createElement('div');
+                inner.className = 'mosaic-inner';
+
+                const front = document.createElement('div');
+                front.className = 'mosaic-front';
+
+                // 動態計算行與列 (0~4)
+                const col = i % 5;
+                const row = Math.floor(i / 5);
+
+                // ★ 更新：建立實體 img 標籤，並套用等比縮放與精準偏移
+                const bgImg = document.createElement('img');
+                bgImg.src = 'images/support/support-bg.jpg';
+                bgImg.className = 'mosaic-bg-img';
+
+                // 傳遞座標變數給 CSS 進行偏移
+                bgImg.style.setProperty('--col', col);
+                bgImg.style.setProperty('--row', row);
+
+                front.appendChild(bgImg);
+
+                const back = document.createElement('div');
+                back.className = 'mosaic-back';
+
+                // 組裝節點
+                inner.appendChild(front);
+                inner.appendChild(back);
+                cell.appendChild(inner);
+                wall.appendChild(cell);
+
+                // 🖱️ 滑鼠懸停事件：即時亂數抽牌
+                cell.addEventListener('mouseenter', () => {
+                    // 1. 隨機抽取一位廠商
+                    const randomIndex = Math.floor(Math.random() * sponsorsList.length);
+                    const sponsor = sponsorsList[randomIndex];
+
+                    // 2. 判斷是否有圖，套用漸層圖片或彩虹底色
+                    if (sponsor.image) {
+                        // 疊加深色漸層，確保白字看得見
+                        back.style.backgroundImage = `linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.3) 100%), url('${sponsor.image}')`;
+                        back.style.backgroundColor = 'transparent';
+                    } else {
+                        // 隨機抽選 1~6 號彩虹色
+                        const colorNum = Math.floor(Math.random() * 6) + 1;
+                        back.style.backgroundImage = 'none';
+                        back.style.backgroundColor = `var(--rb-${colorNum})`;
+                    }
+
+                    // 3. 填入廠商名稱並觸發翻轉 CSS
+                    back.innerHTML = `<span class="sponsor-name">${sponsor.name}</span>`;
+                    cell.classList.add('is-flipped');
+                });
+
+                // 🖱️ 滑鼠離開事件：卡片翻蓋歸位
+                cell.addEventListener('mouseleave', () => {
+                    cell.classList.remove('is-flipped');
+                });
+            }
+        });
+    </script>
+</body>
+</html>
+
+--- FILE: team.html ---
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>球隊陣容 | 德芙蘭少棒隊</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="inner-page.css">
+    <style>
+        /* =========================================
+           頁面專屬微調樣式 (避免動到全域 style.css)
+           ========================================= */
+        .leadership-section { background-color: var(--clr-white); }
+        .coaches-section { background-color: #f8f9fa; }
+        .players-section { background-color: var(--clr-white); }
+
+        /* 故事區塊左右交錯 (支援大螢幕) */
+        @media (min-width: 768px) {
+            .story-block.reverse { flex-direction: row-reverse; }
+            .story-block.reverse .story-content { padding-right: 0; padding-left: 50px; }
+        }
+
+        /* 標籤設計 */
+        .role-tag {
+            background: var(--clr-accent-red);
+            color: #fff;
+            padding: 6px 14px;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            font-weight: bold;
+            display: inline-block;
+            margin-bottom: 15px;
+            box-shadow: 0 4px 10px rgba(200, 75, 49, 0.3);
+        }
+        .coach-role-tag { background: var(--clr-accent-yellow); color: var(--clr-text-main); box-shadow: 0 4px 10px rgba(246, 165, 54, 0.3); }
+
+        /* 教練與球員網格系統 */
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        /* 專業卡片設計 */
+        .person-card {
+            background: #fff;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.06);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-bottom: 5px solid var(--clr-accent-red);
+            display: flex;
+            flex-direction: column;
+        }
+        .person-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+        }
+        .person-img {
+            width: 100%;
+            height: 350px;
+            object-fit: cover;
+            object-position: top;
+            border-bottom: 3px solid var(--clr-accent-yellow);
+        }
+        .person-info {
+            padding: 30px 25px;
+            flex-grow: 1;
+        }
+        .person-name {
+            font-size: 1.6rem;
+            font-weight: 900;
+            color: var(--clr-text-main);
+            margin-bottom: 5px;
+        }
+        .person-subtitle {
+            font-size: 1.05rem;
+            color: var(--clr-text-light);
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        /* 條列式重點文字 */
+        .desc-list { list-style: none; padding: 0; margin: 0; }
+        .desc-list li {
+            margin-bottom: 15px;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            color: #555;
+            position: relative;
+            padding-left: 20px;
+        }
+        .desc-list li::before {
+            content: "⚾";
+            position: absolute;
+            left: 0;
+            top: 2px;
+            font-size: 0.8rem;
+        }
+        .desc-list li strong {
+            color: var(--clr-accent-red);
+            display: block;
+            margin-bottom: 3px;
+            font-size: 1.05rem;
+        }
+    </style>
+</head>
+<body>
+    <header class="navbar" id="navbar">
+        <div class="container nav-container">
+            <div class="logo"><a href="index.html">⚾ 德芙蘭少棒隊</a></div>
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <span></span><span></span><span></span>
+            </button>
+            <nav class="nav-links" id="navLinks">
+                <a href="index.html">首頁</a>
+                <a href="about.html">關於德芙蘭</a>
+                <a href="team.html" class="active">球隊陣容</a>
+                <a href="model.html">德芙蘭模式</a>
+                <a href="honors.html">榮譽殿堂</a>
+                <a href="support.html">社會支持</a>
+                <a href="contact.html">聯絡我們</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="page-header">
+        <div class="page-header-bg">
+            <img src="https://wkwtb1.github.io/tbulan/images/banner/team-banner.png" alt="全體球員與教練團熱血大合照">
+            <div class="page-header-overlay"></div>
+        </div>
+        <h1 class="page-title gs-reveal">英雄陣容</h1>
+    </section>
+
+    <section class="section-padding leadership-section">
+        <div class="container">
+            <div class="section-header center gs-reveal">
+                <h2 class="section-title">創隊靈魂與行政領導</h2>
+                <div class="title-line line-yellow"></div>
+                <p class="section-subtitle">每一位在場上奔跑的孩子背後，都有默默守護的推手</p>
+            </div>
+
+            <div class="story-block gs-reveal">
+                <div class="story-content">
+                    <span class="role-tag">原鄉教育的領航者</span>
+                    <h2 class="section-title" style="font-size: 2rem;">古金益 校長 <span style="font-size:1.2rem; color:var(--clr-text-light);">(德米．米努)</span></h2>
+                    <p class="mt-3"><strong>背景與使命：</strong><br>古校長來自花蓮縣太魯閣族，深耕教育多年。他認為德芙蘭國小的孩子擁有極佳的體能天賦，因此致力於發揮原鄉特色，訂定「德智體群美」並重的教學目標。</p>
+                    <p class="mt-3"><strong>教育哲學：</strong><br>堅信「對的事情要勇敢去做」。他強調棒球訓練的目的不只是追求冠軍，更是要讓孩子學會自律、尊重與團隊精神，並養成「永不放棄」的生命韌性。</p>
+                    <p class="mt-3"><strong>學業並重：</strong><br>校長非常重視球員的學業，落實「完成作業是基本要求」，確保孩子在發展球技的同時絕不落下成績。</p>
+                </div>
+                <div class="story-image">
+                    <img src="images/team/staff-principal.jpg" alt="古金益校長照片" style="border-radius: 12px; box-shadow: var(--shadow-soft);">
+                </div>
+            </div>
+
+            <div class="story-block reverse gs-reveal" style="margin-top: 60px;">
+                <div class="story-content">
+                    <span class="role-tag" style="background: var(--clr-text-main);">球隊的創辦人與伯樂</span>
+                    <h2 class="section-title" style="font-size: 2rem;">王士銘 主任 <span style="font-size:1.2rem; color:var(--clr-text-light);">(總務主任)</span></h2>
+                    <p class="mt-3"><strong>關鍵貢獻：</strong><br>於民國 111 年 (2022 年) 8 月正式組建少棒隊。在球隊成立之初僅有 12 人時，他不惜經費、挨家挨戶將孩子找回球場，被譽為球隊最重要的伯樂。</p>
+                    <p class="mt-3"><strong>幕後功臣：</strong><br>王主任親力親為，負責尋求社會資源、申請政府補助，並打理球隊日常運作的瑣碎事務，是球隊能在資源匱乏的偏鄉持續運行的最重要支柱。</p>
+                </div>
+                <div class="story-image">
+                    <img src="images/team/staff-director.jpg" alt="王士銘主任照片" style="border-radius: 12px; box-shadow: var(--shadow-soft);">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-padding coaches-section">
+        <div class="container">
+            <div class="section-header center gs-reveal">
+                <h2 class="section-title">專業教練團隊</h2>
+                <div class="title-line"></div>
+            </div>
+
+            <div class="team-grid">
+                <article class="person-card gs-reveal">
+                    <img src="images/team/coach-hsu.png" alt="許晏禎總教練照片" class="person-img">
+                    <div class="person-info">
+                        <span class="role-tag coach-role-tag">總教練</span>
+                        <h3 class="person-name">許晏禎</h3>
+                        <div class="person-subtitle">球員的「守護者」與戰術大腦</div>
+                        <ul class="desc-list">
+                            <li><strong>守護精神</strong>最初僅打算短暫協助，卻被孩子的熱誠感動而選擇留下。身兼教練、司機與保姆，親自接送球員並照顧起居。</li>
+                            <li><strong>執教風格</strong>強調「球員保護」高於戰績。在2025年泰雅運決賽中，為保護受傷主力投手果斷調度，成為基層體育的模範。</li>
+                            <li><strong>榮譽肯定</strong>帶領球隊勇奪 2025 年泰雅運與金門太武盃冠軍，並榮獲 2026 年紅證小巨人盃「最佳教練獎」。</li>
+                        </ul>
+                    </div>
+                </article>
+                <article class="person-card gs-reveal">
+                    <img src="images/team/coach-chen.png" alt="陳少偉教練照片" class="person-img">
+                    <div class="person-info">
+                        <span class="role-tag coach-role-tag">教練</span>
+                        <h3 class="person-name">陳少偉</h3>
+                        <div class="person-subtitle">技術與態度的雕琢者</div>
+                        <ul class="desc-list">
+                            <li><strong>專業指導</strong>負責球員的技術基本功與體能訓練，為小將們打下扎實的棒球基礎。</li>
+                            <li><strong>態度要求</strong>強調孩子們長時間的堅持與努力，在高強度賽事中能獲得最真實的回饋，全國賽的冠軍就是對他們訓練態度最直接的肯定。</li>
+                        </ul>
+                    </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-padding players-section">
+        <div class="container">
+            <div class="section-header center gs-reveal">
+                <h2 class="section-title">核心球員陣容</h2>
+                <div class="title-line line-yellow"></div>
+            </div>
+
+            <div class="team-grid">
+                <article class="person-card gs-reveal" style="border-bottom-color: var(--clr-accent-yellow);">
+                    <img src="https://wkwtb1.github.io/tbulan/images/team/player-1.jpg" alt="張子恩投球姿勢" class="person-img" onerror="this.src='https://via.placeholder.com/400x500/2D4263/FFFFFF?text=Player+01'">
+                    <div class="person-info">
+                        <!-- <span class="role-tag" style="background: #333;">背號 1</span>-->
+                        <h3 class="person-name">張子恩</h3>
+                        <div class="person-subtitle" style="color: var(--clr-accent-red);">王牌投手 / 領袖</div>
+                        <p class="person-desc">球隊的核心靈魂人物。不僅擁有精湛的投球技術，更具備強大的抗壓性。傷勢剛痊癒立即上陣的領袖精神，深深感染著每一位隊友。</p>
+                    </div>
+                </article>
+
+                <article class="person-card gs-reveal" style="border-bottom-color: var(--clr-accent-yellow);">
+                    <img src="https://wkwtb1.github.io/tbulan/images/team/player-24.png" alt="巫克迪專注防守照片" class="person-img" onerror="this.src='https://via.placeholder.com/400x500/2D4263/FFFFFF?text=Player+24'">
+                    <div class="person-info">
+                        <!-- <span class="role-tag" style="background: #333;">背號 24</span>-->
+                        <h3 class="person-name">巫克迪</h3>
+                        <div class="person-subtitle" style="color: var(--clr-accent-red);">重砲手</div>
+                        <p class="person-desc">展現出神速的進步軌跡，屢屢在關鍵時刻擊出猛打賞表現，是對方投手在打線中最不願面對的強打者之一。</p>
+                    </div>
+                </article>
+
+                <article class="person-card gs-reveal" style="border-bottom-color: var(--clr-accent-yellow);">
+                    <img src="https://wkwtb1.github.io/tbulan/images/team/player-10.jpg" alt="涂易恩打擊姿勢照片" class="person-img" onerror="this.src='https://via.placeholder.com/400x500/2D4263/FFFFFF?text=Player+10'">
+                    <div class="person-info">
+                        <!-- <span class="role-tag" style="background: #333;">背號 10</span>-->
+                        <h3 class="person-name">涂易恩</h3>
+                        <div class="person-subtitle" style="color: var(--clr-accent-red);">主力打者</div>
+                        <p class="person-desc">擁有優秀的打擊爆發力與流暢的揮擊姿勢，是球隊在賽場上穩定輸出火力的關鍵人物。</p>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container footer-container">
+            <div class="footer-info">
+                <h3>德芙蘭國小少棒隊</h3>
+                <p>📍 台中市和平區松鶴三巷 10 號</p>
+            </div>
+        </div>
+        <div class="footer-bottom"><p>&copy; 2026 德芙蘭國小少棒隊. All Rights Reserved.</p></div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
+
+=== FILE CONTENTS END ===
