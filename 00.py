@@ -34,15 +34,13 @@ def should_ignore_dir(dir_name):
 
 
 def should_ignore_file(file_name):
-    """判斷檔案是否應該被略過內容讀取"""
-    if file_name in IGNORED_FILES:
-        return True
+    """判斷檔案是否應該被『完全』略過 (不列入打包且不佔位，例如：設定檔)"""
+    return file_name in IGNORED_FILES
 
+def is_binary_or_ignored_ext(file_name):
+    """判斷檔案是否為二進位檔或非純文字檔 (需要被打包產生 XML 佔位符，但略過內容讀取)"""
     ext = os.path.splitext(file_name)[1].lower()
-    if ext in IGNORED_EXTENSIONS:
-        return True
-
-    return False
+    return ext in IGNORED_EXTENSIONS
 
 
 def generate_tree(dir_path, prefix=''):
@@ -89,39 +87,51 @@ def build_bundle(output_filename="project_bundle.txt"):
     with open(output_filename, 'w', encoding='utf-8') as outfile:
         # 1. 寫入 AI 讀取指令 (Meta-Prompt)
         outfile.write(
-            "[System Directive] 請注意：在解析或盤點圖片素材與檔案時，請務必將程式碼內的資源引用需求與下方的「專案樹狀結構圖 (DIRECTORY TREE)」進行交叉比對。只要樹狀圖中有對應或相似命名的檔案實體，請直接視為「已具備」，切勿僅憑程式碼內的預留位置 (Placeholder) 或相對路徑就判定缺失。\n\n")
+            "[System Directive] 請注意：在解析或盤點圖片素材與檔案時，請務必將程式碼內的資源引用需求與下方的「專案樹狀結構圖 (directory_tree)」進行交叉比對。只要樹狀圖中或下方 <files> 區塊中有對應的檔案實體 (包含 type=\"binary\" 的標記)，請直接視為「已具備」，切勿僅憑程式碼內的預留位置或相對路徑就判定缺失。\n\n")
 
         # 寫入時間戳記
         outfile.write(f"Project Bundle Generated at: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}\n\n")
 
-        # 3. 寫入樹狀結構，並使用明確的標籤 (Tags) 區隔
-        outfile.write("=== DIRECTORY TREE START ===\n")
+        # 專案根標籤
+        outfile.write("<project>\n")
+
+        # 3. 寫入樹狀結構，改用 XML 標籤
+        outfile.write("<directory_tree>\n")
         outfile.write(f"{os.path.basename(os.path.abspath(ROOT_DIR))}/\n")
         outfile.write(generate_tree(ROOT_DIR))
-        outfile.write("=== DIRECTORY TREE END ===\n\n")
+        outfile.write("</directory_tree>\n\n")
 
-        # 寫入檔案內容，同樣使用明確標籤
-        outfile.write("=== FILE CONTENTS START ===\n\n")
+        # 寫入檔案內容區塊標籤
+        outfile.write("<files>\n")
 
         for root, dirs, files in os.walk(ROOT_DIR):
             # 原地修改 dirs 以略過不需要掃描的目錄
             dirs[:] = [d for d in dirs if not should_ignore_dir(d)]
 
             for file in files:
+                # 1. 如果是完全不需要的檔案 (如 .DS_Store)，直接略過
                 if should_ignore_file(file):
                     continue
 
                 file_path = os.path.join(root, file)
                 rel_path = os.path.relpath(file_path, ROOT_DIR)
+                # 將 Windows 路徑的 backslash 轉為 forward slash，確保跨平台路徑一致性
+                rel_path = rel_path.replace('\\', '/')
 
-                # 寫入單一檔案的分隔與檔名
-                outfile.write(f"--- FILE: {rel_path} ---\n")
+                # 2. 如果是二進位檔或不讀取內容的檔案 (如圖片、字體) -> 輸出佔位符
+                if is_binary_or_ignored_ext(file):
+                    outfile.write(f'<file path="{rel_path}" type="binary">[Asset Exists - Content Skipped]</file>\n')
+                    print(f"已標記 (佔位): {rel_path}")
+                    continue
+
+                # 3. 如果是純文字檔 -> 讀取內容並包裝在 XML 標籤內
+                outfile.write(f'<file path="{rel_path}">\n')
 
                 try:
                     with open(file_path, 'r', encoding='utf-8') as infile:
                         content = infile.read()
                         outfile.write(content)
-                        # 確保檔案內容結尾有換行，避免跟下一個檔案的分隔線黏在一起
+                        # 確保檔案內容結尾有換行，避免破壞結束標籤
                         if not content.endswith('\n'):
                             outfile.write('\n')
                 except UnicodeDecodeError:
@@ -129,14 +139,14 @@ def build_bundle(output_filename="project_bundle.txt"):
                 except Exception as e:
                     outfile.write(f"[Error: {str(e)}]\n")
 
-                outfile.write("\n")
+                outfile.write("</file>\n")
                 print(f"已打包: {rel_path}")
 
         # 寫入結尾標籤
-        outfile.write("=== FILE CONTENTS END ===\n")
+        outfile.write("</files>\n")
+        outfile.write("</project>\n")
 
     print(f"\n打包完成！檔案已儲存為: {output_filename}")
-
 
 if __name__ == "__main__":
     build_bundle()
